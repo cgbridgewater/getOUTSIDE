@@ -1,6 +1,6 @@
-## getOUTSIDE
+## GetOUTSIDE
 
-See The LIVE Site Here 👉 <a href="http://54.201.23.108/getoutside">getOUTSIDE</a>
+See the LIVE site here 👉 <a href="http://54.201.23.108/getoutside">GetOUTSIDE</a>
 
 ## 💻 Built With The Following Technologies
 
