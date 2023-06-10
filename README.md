@@ -19,17 +19,19 @@ See the LIVE site here 👉 <a href="http://54.201.23.108/getoutside">GetOUTSIDE
 <img width="90%" src="readme_images\getoutside1.png" alt="getoutside1">
 
 Login and Registration pages to create or log into an account.
-<p>Don't want to make an account? Explore the site with the demo account!</p>
-Email: demo@demo.com<
+<p>Don't want to make an account? Explore the site with the demo account!</p> 
+
+Email: demo@demo.com
 Password: demopassword
 
 <img width="90%" src="readme_images\getoutside2.png" alt="getoutside2">
 
-The Main page lists activities from all of the other members. You can sort by activity type, click to view a members activity, or choose an option from the hamburger menu 
+The Main page lists activities from all of the other members. 
+You can sort by activity type, click to view a members activity, or choose an option from the hamburger menu 
 
 <img width="90%" src="readme_images\getoutside3.png" alt="getoutside3">
 
-The 'My Profile' page shows users information, a list of followed friends and activities created by the user along with activities they've joined. User info can be edited, along with uploading a custom user image
+The 'My Profile' page shows users information, a list of followed friends and activities created by the user along with activities they've joined. User info can be edited, along with uploading a custom user image to replace the default image
 
 <img width="90%" src="readme_images\getoutside4.png" alt="getoutside4">
 
@@ -41,6 +43,6 @@ A comment section is also available to leave comments on the activity
 <img width="90%" src="readme_images\getoutside5.png" alt="getoutside5">
 
 The 'Find Friends' page displays all members, along with a search option to quickly find members by name. 
-Each name link will give member info and a list of activities they've created
+Each name link will give member info and a list of activities they've created. You can use the 'follow' button to add them to your list of friends located on your profile page.
 
 <img width="90%" src="readme_images\getoutside6.png" alt="getoutside6">
