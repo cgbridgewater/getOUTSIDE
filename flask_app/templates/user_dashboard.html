@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{user.first_name.capitalize()}}'s profile</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/menu.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/userdash.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <!-- main wrapper -->
+    <main>
+        <!-- logo bar -->
+        <div>
+            <img class="logo" src="https://live.staticflickr.com/65535/52792585959_75b5df6be8_h.jpg" alt="getOUTSIDE">
+        </div>
+        <!-- hamburger nav -->
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+            <ul class="menu__box">
+                <li><a class="menu__item" href="/getoutside">Home</a></li>
+                <li><a class="menu__item" href="/getoutside/activities/new">Add Activity</a></li>
+                <li><a class="menu__item" href="/getoutside/friends">Find Friends</a></li>
+                <li><a class="menu__item" href="/logout">Log Out</a></li>
+            </ul>
+        </div>
+        <!-- end hamburger nav -->
+        <!-- top wrapper -->
+        <div class="top_wrapper">
+            <!-- user image/name box -->
+            <div class="image_box">
+                <!-- user name -->
+                <h1 class="user">{{user.first_name.capitalize()}}'s profile</h1>
+                <!--  Profile Image Container -->
+                <div class="image">
+                    <img class="profile_img" src="../static/images/{{user.image_file}}" alt="{{user.image_file}}">
+                </div>
+                <!-- profile buttons -->
+                <div class="button_flex">
+                    <a class="find_friend btn btn-success m-1 p-1 rounded-2 border-2 border-dark " href="/getoutside/athlete/update"    role="button">EDIT</a>
+                </div>
+            </div>
+            <!-- end user image/name box -->
+            <!-- User Data by row -->
+            <div class="profile_info">  
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <td><h4>Name:</h4></td>
+                        <td><h4>{{ user.first_name.capitalize() }} {{ user.last_name.capitalize() }}</h4></td>
+                    </tr>
+                    <tr>
+                        <td><h4>Email:</h4></td>
+                        <td><h4>{{ user.email }}</h4></td>
+                    </tr>
+                    <tr>
+                        <td><h4>Member Since:</h4></td>
+                        <td><h4>{{ user.created_at.strftime("%B %e, %Y %I:%M %p") }}</h4></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>  
+            <!-- End User Data -->
+            <!-- Friend List container -->
+            <div class="friend_list_container">
+                <!-- find friend button -->
+                <!-- title -->
+                <h4>My Friends</h4>
+                <!-- friends list -->
+                <div class="friend_box">
+                    <!-- link list  -->
+                    <div>
+                        {% for follower in followers %}
+                        <ul>
+                            <h5>
+                                <a class="link" href="/getoutside/athlete/{{follower.friend.id}}">{{follower.friend.first_name.capitalize()}} {{follower.friend.last_name.capitalize()}}</a>
+                            </h5>
+                        </ul>
+                        {% endfor %}
+                    </div>
+                    <!-- end list  -->
+                </div> 
+            </div>
+            <!-- End Friend List Container -->
+        </div>
+        <!-- End Wrapper -->
+        <!-- center page decoration spacer -->
+        <hr class="spacer">
+        <!-- Activities Container -->
+        <div class="activity_container">
+            <!-- Left Box -->
+            <div class="friend_left">
+                <!-- title and button -->
+                <div>
+                    <h4>Activities I'm Leading</h4>    
+                </div>
+                <!-- activity list -->
+                <div class="activity_links">
+                    <!-- loop through activities -->
+                    {% for a in activities %}
+                        <!-- filter for only logged in user -->
+                        {% if a.creator.id == session.user_id %}
+                        <!-- display data -->
+                            <h5>
+                                <a class="link" href="/getoutside/activity/{{a.id}}"> I'm going {{a.activity}} at {{a.location}} on {{a.date.strftime("%B %e, %Y")}} </a>
+                            </h5>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <!-- Right Box -->
+            <div class="friend_right">
+                <!-- title and button-->
+                <div>
+                    <h4>Activities I'm Joining</h4>
+                </div>
+                <!-- activity list -->
+                <div class="activity_links">
+                    <!-- loop through activities -->
+                    {% for a in joined %}
+                        <!-- filter for only logged in user -->
+                        <!-- display data -->
+                            <h5>
+                                <a class="link" href="/getoutside/activity/{{a.id}}"> {{a.creator.first_name.capitalize()}} {{a.creator.last_name.capitalize()}} is going {{a.activity}} at {{a.location}} on {{a.date.strftime("%B %e, %Y")}} </a>
+                            </h5>
+                    {% endfor %}
+                </div>
+                <!-- end activity list -->
+            </div>
+            <!-- end right box -->
+        </div>
+        <!-- Activities Container -->
+    </main>
+    <!-- End Main -->
+</body>
+</html>

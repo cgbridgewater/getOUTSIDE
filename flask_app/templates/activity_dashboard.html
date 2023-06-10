@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get OUTSIDE!</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/menu.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <!-- logo bar -->
+    <div>
+        <img class="logo" src="https://live.staticflickr.com/65535/52792585959_75b5df6be8_h.jpg" alt="getOUTSIDE">
+    </div> 
+    <!-- main wrapper -->
+    <main>
+        <!-- hamburger nav -->
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+            <ul class="menu__box">
+                <li><a class="menu__item" href="/getoutside/athlete">My Profile</a></li>
+                <li><a class="menu__item" href="/getoutside/activities/new">Add Activity</a></li>
+                <li><a class="menu__item" href="/getoutside/friends">Find Friends</a></li>
+                <li><a class="menu__item" href="/logout">Log Out</a></li>
+            </ul>
+        </div>
+        <!-- end hamburger nav -->
+        <!-- content wrapper -->
+        <div class="content">
+            <!-- welcome title -->
+            <div class="welcome">
+                <h1>Welcome {{user.first_name}},&nbsp; </h1>
+                <h6 class="time">It's time to</h6>
+                <h2 class="outside">Get OUTSIDE!</h2>    
+            </div>
+            <!-- end welcome title -->
+            <!-- main wrapper -->
+            <div class="wrapper">
+                <!-- top row text -->
+                <div class="flex">
+                    <h4 class="green">See what your friends are up to!</h4>
+                    <div class="filter-post" >
+                        <select name="filter" id="filter" onchange="searchUser()">
+                            <option value="">--Sort By Activity--</option>
+                            <option value="Climbing">Climbing</option>
+                            <option value="Cycling">Cycling</option>
+                            <option value="Mtn. Biking">Mtn. Biking</option>
+                            <option value="Disc Golfing">Disc Golfing</option>
+                            <option value="Golfing">Golfing</option>
+                            <option value="Hiking">Hiking</option>
+                            <option value="Paddling">Paddling</option>
+                            <option value="Rowing">Rowing</option>
+                            <option value="Running">Running</option>
+                            <option value="Skiing">Skiing</option>
+                            <option value="Snowboarding">Snowboarding</option>
+                            <option value="Snowshoeing">Snowshoeing</option>
+                            <option value="Swimming">Swimming</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- bottom row text with select sort -->
+                    <h6>(click on activities below to view details)</h6>
+                <!-- table -->
+                <table id="userTable" class="activity_table table table-hover border border-3 border-success">
+                    <tbody>
+                        <tr>
+                        <!-- loop through activities -->
+                        {% for activity in activities %}
+                        <!-- filter logged in user -->
+                        {% if session.user_id != activity.creator.id %}
+                            <!-- display data -->
+                            <td>   
+                                <a class="activity_link" href="/getoutside/activity/{{activity.id}}"> {{activity.creator.first_name.capitalize()}} {{activity.creator.last_name.capitalize()}} is going {{activity.activity}} at {{activity.location}} on {{activity.date.strftime("%B %e, %Y")}} </a>
+                            </td> 
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <!-- Table END -->
+            </div>
+        </div>
+        <!-- End Contend Wrapper -->
+    </main>
+    <!-- End Main Wrapper -->
+    <script src="{{ url_for('static', filename='js/search_script.js') }}"></script>
+</body>
+</html>
