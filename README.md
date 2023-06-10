@@ -13,19 +13,19 @@ See the LIVE site here 👉 <a href="http://54.201.23.108/getoutside">GetOUTSIDE
 <br/>
 <br/>
 
-## Images from the site showing layout and features
+## 📷 Images from the site showing layout and features
 
 
 <img width="90%" src="readme_images\getoutside1.png" alt="getoutside1">
 
-<h4>Login and Registration pages to create or log into an account.</h4>
+Login and Registration pages to create or log into an account.
 <p>Don't want to make an account? Explore the site with the demo account!</p>
 <p>Email: demo@demo.com</p>
 <p>Password: demopassword</p>
 
 <img width="90%" src="readme_images\getoutside2.png" alt="getoutside2">
 
-
+The Main page lists activities of all other members. You can sort by activity, click to view an activity, or choose an option from the hamburger menu
 
 <img width="90%" src="readme_images\getoutside3.png" alt="getoutside3">
 
