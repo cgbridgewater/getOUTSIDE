@@ -49,3 +49,10 @@ The 'Find Friends' page displays all members, along with a search option to quic
 Each name link will give member info and a list of activities they've created. You can use the 'follow' button to add them to your list of friends located on your profile page.
 
 <img width="90%" src="readme_images\getoutside6.png" alt="getoutside6">
+
+
+<br/>
+<br/>
+<br/>
+<h6><a href="https://github.com/cgbridgewater/Projects_n_Algos/tree/main/p_n_a_solo">Origional repo can be found here</a></h6>
+
