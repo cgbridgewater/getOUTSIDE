@@ -1,8 +1,7 @@
-## GetOUTSIDE
+## GetOUTSIDE 🌳🚶🌲
 
 See the LIVE site here 👉 <a href="http://54.201.23.108/getoutside">GetOUTSIDE</a>
 <p>Don't want to make an account? Explore the site with the demo account!</p> 
-<br/>
 Email: demo@demo.com
 <br/>
 Password: demopassword
