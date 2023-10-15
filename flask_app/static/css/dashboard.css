@@ -91,7 +91,7 @@ tr {
 main {
     display: flex;
     flex-wrap: wrap;
-    min-height: 100vh;
+    min-height: 75dvh;
     height:100%;
     width: 100%;
     background-color: #fffef5;

@@ -40,7 +40,7 @@
                 <h1 class="user">{{user.first_name.capitalize()}}'s profile</h1>
                 <!--  Profile Image Container -->
                 <div class="image">
-                    <img class="profile_img" src="../static/images/{{user.image_file}}" alt="{{user.image_file}}">
+                    <img class="profile_img" src="/static/images/{{user.image_file}}" alt="{{user.image_file}}">
                 </div>
                 <!-- profile buttons -->
                 <div class="button_flex">
@@ -62,7 +62,7 @@
                     </tr>
                     <tr>
                         <td><h4>Member Since:</h4></td>
-                        <td><h4>{{ user.created_at.strftime("%B %e, %Y %I:%M %p") }}</h4></td>
+                        <td><h4>{{ user.created_at.strftime("%B %e, %Y") }}</h4></td>
                     </tr>
                     </tbody>
                 </table>

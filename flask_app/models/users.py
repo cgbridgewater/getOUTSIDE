@@ -230,7 +230,7 @@ class User:
     
 
 
-### UPDATE USER BY ID (usersController)
+### UPDATE USER IMAGE BY ID (usersController)
     @classmethod
     def update_user_image(cls,data):
         query = """
