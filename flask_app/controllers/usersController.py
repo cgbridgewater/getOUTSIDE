@@ -8,7 +8,7 @@ from werkzeug.utils import secure_filename
 
 
 ### ATHLETE DASHBOARD
-@app.route('/getoutside/athlete')
+@app.route('/getoutside/myprofile')
 def user_dashboard():
     if 'user_id' not in session:
         msg = "you must be logged in!"
@@ -16,7 +16,7 @@ def user_dashboard():
     data ={
         'id': session['user_id']
     }
-    return render_template("user_dashboard.html", user = User.get_user_by_id(data), activities = Activity.get_all_activities(), joined = Activity.get_all_activities_and_attendees(data), followers = User.all_followers(data))
+    return render_template("user_profile.html", user = User.get_user_by_id(data), activities = Activity.get_all_activities(), joined = Activity.get_all_activities_and_attendees(data), followers = User.all_followers(data))
 
 
 ### UPDATE ATHLETE FORM (protected)
@@ -50,7 +50,7 @@ def update_user_form_action():
     if not User.update_validation_check(data):
         return redirect('/getoutside/athlete/update')
     User.update_user_by_id(data)
-    return redirect("/getoutside/athlete") 
+    return redirect("/getoutside/myprofile") 
 
 
 ### ATHLETUS DELETUS (protected)
@@ -89,7 +89,7 @@ def follow_user_return_to_homepage(id):
         'user_id' : session['user_id']
     }
     User.follow_user(data)
-    return redirect("/getoutside/athlete")
+    return redirect("/getoutside/myprofile")
 
 
 ### UNFOLLOW FRIEND
@@ -102,7 +102,7 @@ def unfollow_user(id):
         'user_id' : session['user_id']
     }
     User.unfollow_user(data)
-    return redirect("/getoutside")
+    return redirect("/getoutside/activities")
 
 
 ### FRIEND SEARCH SINGLE PAGE FORM/RESULTS
@@ -167,5 +167,5 @@ def upload_image():
             }
             User.update_user_image(data)
             # return to profile page on success
-            return redirect("/getoutside/athlete") 
+            return redirect("/getoutside/myprofile") 
     return redirect("/getoutside/athlete/update") 

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{user.first_name.capitalize()}}'s Info</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/menu.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/userdash.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/user_one_view.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
@@ -25,8 +25,8 @@
                 <span></span>
             </label>
             <ul class="menu__box">
-                <li><a class="menu__item" href="/getoutside">Home</a></li>
-                <li><a class="menu__item" href="/getoutside/athlete">My Profile</a></li>
+                <li><a class="menu__item" href="/getoutside/myprofile">My Profile</a></li>
+                <li><a class="menu__item" href="/getoutside/activities">Activities</a></li>
                 <li><a class="menu__item" href="/getoutside/activities/new">Add Activity</a></li>
                 <li><a class="menu__item" href="/getoutside/friends">Find Friends</a></li>
                 <li><a class="menu__item" href="/logout">Log Out</a></li>
@@ -35,6 +35,14 @@
         <!-- end hamburger nav -->
         <!-- top wrapper -->
         <div class="top_wrapper">
+            <!-- user image/name box -->
+            <div class="image_box">
+                <!--  Profile Image Container -->
+                <div class="image">
+                    <img class="profile_img" src="/static/images/{{user.image_file}}" alt="{{user.image_file}}">
+                </div>
+            </div>
+            <!-- end user image/name box -->
             <!-- User Data -->
                 <div class="profile_info">  
                 <table class="table">
@@ -42,7 +50,8 @@
                         <tr>
                             <!-- box title -->
                             <td>
-                                <h1 class="user">{{user.first_name.capitalize()}}'s Info</h1></td>
+                                <h1 class="user">{{user.first_name.capitalize()}}'s Info</h1>
+                            </td>
                             <td>
                                 <div class="flex2">
                                     <a onclick="myalert()"  class="profile_button btn btn-primary m-1 p-1 rounded-2 border-2 border-dark " href="/getoutside/athlete/{{user.id}}/follow" role="button">FOLLOW</a>
@@ -55,32 +64,35 @@
                         </tr>
                         <tr>
                             <td><h4>Member Since:</h4></td>
-                            <td><h4>{{ user.created_at.strftime("%B %e, %Y %I:%M %p") }}</h4></td>
+                            <td><h4>{{ user.created_at.strftime("%B %e, %Y") }}</h4></td>
                         </tr>
                     </tbody>
                 </table>
             </div>  
             <!-- End User Data -->
             <!-- Right Box -->
-            <div class="friend_right">
-                <!-- title and button -->
-                <div>
-                    <h4>Activities {{ user.first_name.capitalize() }} is Leading</h4>    
-                </div>
-                <!-- activity list -->
-                <div class="activity_links">
-                    <!-- loop through activities -->
-                    {% for activity in activities %}
-                        <!-- filter for only logged in user -->
-                        {% if activity.creator.id == user.id %}
-                        <!-- display data -->
+
+
+                <div class="friend_right">
+                    <!-- title and button -->
+                    <div>
+                        <h4>Activities {{ user.first_name.capitalize() }} is Leading</h4>    
+                    </div>
+                    <!-- activity list -->
+                    <div class="activity_links">
+                        <!-- loop through activities -->
+                        {% for activity in activities %}
+                            <!-- filter for only logged in user -->
+                            {% if activity.creator.id == user.id %}
+                            <!-- display data -->
                             <h5>
                                 <a class="link" href="/getoutside/activity/{{activity.id}}"> {{ user.first_name.capitalize() }}'s going {{activity.activity}} at {{activity.location}} on {{activity.date.strftime("%B %e, %Y")}} </a>
                             </h5>
-                        {% endif %}
-                    {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
+
         </div>
     </main>
     <!-- End Main -->

@@ -24,8 +24,8 @@
                 <span></span>
             </label>
             <ul class="menu__box">
-                <li><a class="menu__item" href="/getoutside">Home</a></li>
-                <li><a class="menu__item" href="/getoutside/athlete">My Profile</a></li>
+                <li><a class="menu__item" href="/getoutside/myprofile">My Profile</a></li>
+                <li><a class="menu__item" href="/getoutside/activities">Activities</a></li>
                 <li><a class="menu__item" href="/getoutside/friends">Find Friends</a></li>
                 <li><a class="menu__item" href="/logout">Log Out</a></li>
             </ul>
@@ -61,6 +61,7 @@
                             {% if session['activity'] is defined %}
                             <option value="{{session['activity']}}" hidden selected >{{session['activity']}}</option>
                             {% endif%}
+                            <option value="to the Gym">Gym</option>
                             <option value="Climbing">Climbing</option>
                             <option value="Cycling">Cycling</option>
                             <option value="Mtn. Biking">Mtn. Biking</option>
@@ -94,7 +95,7 @@
                     <!-- Buttons -->
                     <div class="flex">
                         <button type="submit" value="Login" class="click input mt-1 text-light bg-success bg-gradient rounded-1 ">SUBMIT</button>
-                        <a href="/getoutside/athlete" class="click btn btn-sm border-dark mt-1 text-light bg-danger bg-gradient rounded-1" role="button">CANCEL</a>
+                        <a href="/getoutside/activities" class="click btn btn-sm border-dark mt-1 text-light bg-danger bg-gradient rounded-1" role="button">CANCEL</a>
                     </div>
                     <!-- End buttons -->
                 </form>

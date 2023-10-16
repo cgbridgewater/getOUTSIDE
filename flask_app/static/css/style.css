@@ -2,7 +2,7 @@
 
 .outside {
     width:100vw;
-    height:50vh;
+    height:25vh;
 }
 
 .error {
@@ -25,7 +25,7 @@
 .background {
     display: flex;
     flex-wrap: wrap;
-    min-height: 50vh;
+    min-height: 75vh;
     height:100%;
     width: 100vw;
     background-image: url(https://live.staticflickr.com/65535/52791790942_d8b17c6219_h.jpg);

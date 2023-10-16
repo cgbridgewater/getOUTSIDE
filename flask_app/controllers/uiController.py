@@ -38,7 +38,7 @@ def register():
     session.pop("last_name", None)
     session.pop("email", None)
     session['user_id'] = user_id
-    return redirect("/getoutside")
+    return redirect("/getoutside/myprofile")
 
 
 ### LOGIN FORM 
@@ -63,7 +63,7 @@ def login():
         return redirect('/getoutside/login')
     session["user_id"] = user_in_db.id
     session.pop("email2", None)
-    return redirect("/getoutside")
+    return redirect("/getoutside/myprofile")
 
 
 ### ROUTE FOR LOGOUT 

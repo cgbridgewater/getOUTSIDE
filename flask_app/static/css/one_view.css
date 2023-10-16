@@ -35,8 +35,9 @@
 }
 
 .btn {
-    width: 90px;
-    border-radius: 5px;
+    width: 85px;
+    font-size: 12px;
+    margin:2px;
 }
 
 .activity_container {
@@ -76,7 +77,11 @@
 }
 
 .buttons {
-        margin-left: 10px;
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    width: 200px;
 }
 
 .activity_links {
@@ -127,6 +132,12 @@ iframe {
 
 .submit { 
     width: 30%;
+}
+
+.error {
+    color:red;
+    font-weight: 800;
+    
 }
 
 .comment_text {
