@@ -5,14 +5,110 @@
     padding: 0;
 }
 
+header {
+    background-image: url("https://d3owbckoeihl9o.cloudfront.net/images/10adv/wp-content/uploads/2018/12/USA-Oregon-Bend-Pano.jpg");
+    background-position: center;
+    background-size:cover;
+    height: 25%;
+    width: 100dvw;
+}
 
-.green{
-    margin: 20px;
+.header_text {
+    margin: 0;
+    padding-bottom: 1%;
+    text-align: center;
+    font-weight: 800;
+    color: none;
+    text-shadow: green 0 0 30px;
+}
+
+@supports(-webkit-text-stroke: 3px rgba(88, 254, 88, 0.677)){
+    .header_text{
+        color: transparent;
+        -webkit-text-stroke: 3px rgba(44, 189, 44, 0.677);
+        /* text-shadow: none; */
+    }
+}
+
+@media (min-width:1200px) {
+    .header_text {
+        font-size: 11rem;
+        transition:  0.5s;	
+    }
+}
+
+@media (min-width:992px) and (max-width:1199px) {
+    .header_text {
+        font-size: 9rem;
+        transition:  0.5s;	
+    }
+}
+@media (min-width:768px) and (max-width:991px) {
+    .header_text {
+        font-size: 6rem;
+        transition:  0.5s;	
+    }
+}
+@media (min-width:481px) and (max-width:767px) {
+    .header_text {
+        font-size: 4rem;
+        transition:  0.5s;	
+    }
+}
+@media (max-width:480px) {
+    .header_text {
+        font-size: 2.5rem;
+        transition:  0.5s;	
+    }
+}
+
+.green {
     text-align: center;
     color: green;
     font-weight: 700;
 }
 
+.login {
+    text-align: center;
+    color: green;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.container {
+    width: 375px;
+    margin: 5px auto;
+    padding: 15px;
+    background-color: honeydew;
+    opacity: 85%;
+    border: 2px solid green;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.container2 {
+    width: 375px;
+    margin: 5px auto;
+    padding: 15px;
+    background-color: honeydew;
+    opacity: 85%;
+    border: 2px solid green;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    list-style-type:square;
+}
+
+li {
+    text-align: start;
+}
 
 .flex {
     width: 100%;
@@ -21,9 +117,27 @@
     align-items: center;
 }
 
+.phone {
+    border: 2px solid green;
+    border-radius: 10px;
+    height: 450px;
+    width: 310px;
+    margin: 0 auto;
+}
+
+.outside {
+    margin: 0;
+    text-align: center;
+    color: green;
+    font-weight: 700;
+}
+
+
+
+
+
 main {
-    padding: 20px;
-    min-height: 100dvh;
+    min-height: 75dvh;
     height:100%;
     width: 100%;
     background-color: #fffef5;

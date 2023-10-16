@@ -4,18 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>getOUTSIDE</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/landing_page.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/landing_page.css') }}">
 </head>
 <body>
 
         <!-- main wrapper -->
+        <header>
+            <h1 class="header_text">Get OUTSIDE</h1>
+        </header>
+
         <main>
-            <h1 class="green">Hello, it's time to log off and Get OUTSIDE!</h1>
-            <div class="flex">
-                <h3>New here? Click to <a class="menu__item" href="/getoutside/register">Register</a></h3>
-                <h3>Not your first time? <a class="menu__item" href="/getoutside/login">Login</a></h3>
+            <h1 class="green">It's time to log off and Get OUTSIDE!</h1>
+            <p class="login">Not your first time? <a class="menu__item" href="/getoutside/login">Login</a></p>
+            <div class="wrapper">
+
+                <div class="container">
+                    <h2 class="text-center">We've all been there</h2>
+                    <h4 class="text-center">Everyone knows how to track and log their activities, but what about organizing them?</h4>
+                    <img class="phone" src="../static/images/whereAreYou.png" alt="phone 'where are you'">
+                </div>
+                
+                <div class="container2">
+                    <h4>Sure, there's the usual ways,</h4>
+                    <h4>but they come with:</h4>
+                    <ul>
+                        <li>Forgetting details from a conversation...</li>
+                        <li>Messaging different people and trying to remember who's up to date...</li>
+                        <li>Getting left on read, wondering if they're coming...</li>
+                        <li>Group chats with the "green bubble"...</li>
+                    </ul>
+                    <h4 class="text-center">It can all be a headache when </h4>
+                    <h4 class="text-center">all you want to do is...</h4>
+                    <h4 class="outside">Get OUTSIDE!</h4>
+                    <p class="text-center">Want to give it a try? Click to <a class="menu__item" href="/getoutside/register">Register</a></p>
+                </div>
+                
+
+
+
             </div>
         </main>
 
