@@ -9,6 +9,15 @@ from flask_app.models.activities import Activity
 ###  ACTIVITY DASH BOARD
 @app.route('/getoutside')
 @app.route('/getoutside/')
+def dashboard():
+    return render_template("landing_page.html")
+
+
+
+
+###  ACTIVITY DASH BOARD
+@app.route('/getoutside/activities')
+@app.route('/getoutside/activities/')
 def activity_dashboard():
     if 'user_id' not in session:
         msg = "you must be logged in!"
@@ -16,8 +25,7 @@ def activity_dashboard():
     data ={
         'id': session['user_id']
     }
-    return render_template(
-        "activity_dashboard.html", user = User.get_user_by_id(data), activities = Activity.get_all_activities())
+    return render_template("activity_dashboard.html", user = User.get_user_by_id(data), activities = Activity.get_all_activities())
 
 
 ### NEW ACTIVITY FORM
@@ -47,7 +55,25 @@ def create_activity_form_action():
     session.pop("activity", None)
     session.pop("location", None)
     session.pop("date", None)
-    return redirect("/getoutside/athlete") 
+    return redirect("/getoutside/activities") 
+
+
+### NEW ACTIVITY POST ACTION FROM ACTIVITIES PAGE
+@app.route('/getoutside/activities/new1', methods=["POST"])
+def create_activity_form_action1():
+    if 'user_id' not in session:
+        msg = "you must be logged in!"
+        return redirect('/logout')
+    if not Activity.activity_validation_check(request.form):
+        session["activity"] = request.form["activity"]
+        session["location"] = request.form["location"]
+        session["date"] = request.form["date"]
+        return redirect('/getoutside/activities/new') 
+    Activity.create_activity_form_action(request.form)
+    session.pop("activity", None)
+    session.pop("location", None)
+    session.pop("date", None)
+    return redirect("/getoutside/activities") 
 
 
 ### UPDATE ACTIVITY FORM (Protected)
@@ -114,7 +140,7 @@ def attend_activity_return_to_home_page(id):
         'user_id' : session['user_id']
     }
     Activity.attend_activity(data)
-    return redirect("/getoutside")
+    return redirect("/getoutside/activities")
 
 
 ### ATTEND ACTIVITY ROUTE WITH ATHLETE DASH RETURN
@@ -155,4 +181,4 @@ def delete_activity_by_id(id):
     if session['user_id'] != activity.creator.id:
         return redirect('/logout')
     Activity.delete_activity_by_id(data)
-    return redirect("/getoutside/athlete")
+    return redirect("/getoutside/myprofile")
