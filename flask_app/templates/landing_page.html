@@ -16,19 +16,125 @@
         </header>
 
         <main>
-            <h1 class="green">It's time to log off and Get OUTSIDE!</h1>
-            <p class="login">Not your first time? <a class="menu__item" href="/getoutside/login">Login</a></p>
+            <h1 class="page_title">It's time to log off and Get OUTSIDE!</h1>
+            <!-- <p class="login">Not your first time? <a class="menu__item" href="/getoutside/login">Login</a></p> -->
             <div class="wrapper">
 
-                <div class="container">
-                    <h2 class="text-center">We've all been there</h2>
+                <!-- left box -->
+                <div class="container1">
+                    <h3 class="title">We've all been there</h3>
                     <h4 class="text-center">Everyone knows how to track and log their activities, but what about organizing them?</h4>
                     <img class="phone" src="../static/images/whereAreYou.png" alt="phone 'where are you'">
                 </div>
                 
+
+
+                <!-- container for registration -->
                 <div class="container2">
-                    <h4>Sure, there's the usual ways,</h4>
-                    <h4>but they come with:</h4>
+                    <!-- reg wrapper -->
+                    <div class="register">
+                        <!-- header -->
+                        <h3 class="title">Register to Get OUTSIDE</h3>
+
+                        <!-- form start -->
+                        <form action='/getoutside/register' method="POST">
+                            <!-- first name section -->
+                            <div class="text-start">
+                                {% with messages = get_flashed_messages(category_filter=["firstName"]) %}
+                                    {% if messages %}
+                                        {% for message in messages %}
+                                            <label class="error">{{message}}</label>
+                                        {% endfor %}
+                                    {% else %}
+                                    <label for="first_name" class="text-sm-start">First Name:</label>
+                                    {% endif %}
+                                {% endwith %}
+                            </div>
+                            <div>
+                                <input type="text" name="first_name" class="input form-control bg-light" value="{{session['first_name']}}">
+                            </div>
+                            <!-- END first name section -->
+                            <!-- Last name section -->
+                            <div class="text-start">
+                                {% with messages = get_flashed_messages(category_filter=["lastName"]) %}
+                                    {% if messages %}
+                                        {% for message in messages %}
+                                            <label class="error">{{message}}</label>
+                                        {% endfor %}
+                                    {% else %}
+                                    <label for="last_name" class="text-sm-start">Last Name:</label>
+                                    {% endif %}
+                                {% endwith %}
+                            </div>
+                            <div>
+                                <input type="text" name="last_name" class="input form-control bg-light" value="{{session['last_name']}}">
+                            </div>
+                            <!-- END Last name section -->
+                            <!-- Email section -->
+                            <div class="text-start">
+                                {% with messages = get_flashed_messages(category_filter=["email"]) %}
+                                    {% if messages %}
+                                        {% for message in messages %}
+                                            <label class="error">{{message}}</label>
+                                        {% endfor %}
+                                    {% else %}
+                                    <label for="email" class="text-sm-start">Email:</label>
+                                    {% endif %}
+                                {% endwith %}
+                            </div>
+                            <div>
+                                <input type="text" name="email" class="input form-control bg-light" value="{{session['email']}}">
+                            </div>
+                            <!-- End Email section -->
+                            <!-- Password section -->
+                            <div class="text-start">
+                                {% with messages = get_flashed_messages(category_filter=["password"]) %}
+                                    {% if messages %}
+                                        {% for message in messages %}
+                                            <label class="error">{{message}}</label>
+                                        {% endfor %}
+                                    {% else %}
+                                    <label for="password" class="text-sm-start">Password:</label>
+                                    {% endif %}
+                                {% endwith %}                        </div>
+                            <div>
+                                <input type="password" name="password" class="input form-control bg-light">
+                            </div>
+                            <!-- End Password section -->
+                            <!-- Confirm Password section -->
+                            <div class="text-start">
+                                {% with messages = get_flashed_messages(category_filter=["confirm"]) %}
+                                    {% if messages %}
+                                        {% for message in messages %}
+                                            <label class="error">{{message}}</label>
+                                        {% endfor %}
+                                    {% else %}
+                                    <label for="confirm_password" class="text-sm-start">Confirm Password:</label>
+                                    {% endif %}
+                                {% endwith %}                        </div>
+                            <div>
+                                <input type="password" name="confirm_password" class="input form-control bg-light">
+                            </div>
+                            <!-- EndConfirm Password section -->
+                            <!-- login link -->
+                            <div class="flex">
+                                <button type="submit" value="Register" class="input text-light mt-1 bg-success  bg-gradient rounded-2">Get OUTSIDE</button>
+                                <p>Already a member? <a href="/getoutside/login">Log In!</a></p>
+                            </div>
+                        </form>
+                    <!--form END -->
+                    </div>
+                </div>
+                <!-- end register container -->
+
+
+
+
+
+                <!-- right box -->
+                <div class="container3">
+                    <h3 class="title">Sure, there's the usual ways,</h3>
+                    <h3 class="title">but they come with:</h3>
                     <ul>
                         <li>Forgetting details from a conversation...</li>
                         <li>Messaging different people and trying to remember who's up to date...</li>
@@ -38,7 +144,8 @@
                     <h4 class="text-center">It can all be a headache when </h4>
                     <h4 class="text-center">all you want to do is...</h4>
                     <h4 class="outside">Get OUTSIDE!</h4>
-                    <p class="text-center">Want to give it a try? Click to <a class="menu__item" href="/getoutside/register">Register</a></p>
+                    <img class="outside_image" src="https://live.staticflickr.com/65535/52822659246_8ee3feab56.jpg" alt="running lake">
+                    <!-- <p class="text-center">Want to give it a try? Click to <a class="menu__item" href="/getoutside/register">Register</a></p> -->
                 </div>
                 
 

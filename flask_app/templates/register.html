@@ -16,23 +16,17 @@
         <img class="outside" src="https://live.staticflickr.com/65535/52792585959_75b5df6be8_h.jpg" alt="get_outside">
         <!-- background image container -->
         <div class="background">
+            <h1 class="page_title">It's time to log off and</h1>
+            <h1 class="page_title">Get OUTSIDE!</h1>
+
+
             <!-- container for registration -->
             <div class="login_container">
                 <!-- reg wrapper -->
                 <div class="register">
                     <!-- header -->
                     <h3 class="title">Register to Get OUTSIDE</h3>
-                        <!-- validation error return -->
-                        {% with messages = get_flashed_messages(category_filter=["register"]) %}
-                            <!-- declare a variable called messages -->
-                            {% if messages %}
-                                <!-- check if there are any messages -->
-                                {% for message in messages %}
-                                <!-- loop through the messages -->
-                                    <p class="error">{{message}}</p>
-                                {% endfor %}
-                            {% endif %}
-                        {% endwith %}
+
                     <!-- form start -->
                     <form action='/getoutside/register' method="POST">
                         <!-- first name section -->
