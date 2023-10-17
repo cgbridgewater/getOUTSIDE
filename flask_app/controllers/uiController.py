@@ -8,7 +8,7 @@ bcrypt = Bcrypt(app)
 ### REDIRECT TO DOMAIN CONTROL ROUTE
 @app.route('/')
 def index():
-    return redirect("/getoutside/login")
+    return redirect("/getoutside")
 
 
 ### REGISTER FORM 
