@@ -79,10 +79,42 @@ tr {
     vertical-align:middle;
 }
 
+.plus {
+    position: relative;
+    top: 5px;
+    left: 10px;
+    font-size: 20px;
+    color: #3b8321;
+}
+
+
+.flex {
+    display: flex;
+}
+
 .flex2 {
     display: flex;
     justify-content: end;
     flex-wrap: wrap;
+}
+
+.tooltip_text {
+    visibility: hidden;
+    position: relative;
+    bottom: 30px;
+    right: 60px;
+    z-index: 1;
+    width: 100px;
+    color: green;
+    font-size: 14px;
+    background-color: #FFFFF5;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 10px 15px 10px 15px;
+}
+
+.hover_text:hover .tooltip_text {
+    visibility: visible;
 }
 
 .friend_list_container {
@@ -174,7 +206,7 @@ tr {
     width: 200px;
 }
 
-main {
+body {
     min-height: 100vh;
     height:100%;
     width: 100%;
