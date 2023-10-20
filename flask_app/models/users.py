@@ -211,6 +211,7 @@ class User:
             ORDER BY friends_made.first_name
         """
         results = connectToMySQL('test_app').query_db(query,data)
+        pprint(results)
         user_and_friends = []
         for row in results:
             user = cls(row)
