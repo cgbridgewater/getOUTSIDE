@@ -27,7 +27,6 @@
             </label>
             <ul class="menu__box">
                 <li><a class="menu__item" href="/getoutside/activities">Activities</a></li>
-                <li><a class="menu__item" href="/getoutside/activities/new">Add Activity</a></li>
                 <li><a class="menu__item" href="/getoutside/friends">Find Friends</a></li>
                 <li><a class="menu__item" href="/logout">Log Out</a></li>
             </ul>
@@ -73,7 +72,15 @@
             <div class="friend_list_container">
                 <!-- find friend button -->
                 <!-- title -->
-                <h4>My Friends</h4>
+                <div class="flex">
+                    <h4>My Friends</h4>
+                    <div>
+                        <div class="hover_text">
+                            <a href="/getoutside/friends"><i class="plus fa-solid fa-magnifying-glass-plus"></i></a>
+                            <span class="tooltip_text">Find Friends</span>
+                        </div>
+                    </div>
+                </div>
                 <!-- friends list -->
                 <div class="friend_box">
                     <!-- link list  -->
@@ -99,8 +106,12 @@
             <!-- Left Box -->
             <div class="friend_left">
                 <!-- title and button -->
-                <div>
-                    <h4>Activities I'm Leading</h4>    
+                <div class="flex">
+                    <h4>Activities I'm Leading</h4>
+                    <div class="hover_text">
+                        <a href="/getoutside/activities/new"><i class="plus fa-solid fa-circle-plus"style="color: #3b8321;"></i></a>
+                        <span class="tooltip_text">Create New Activity</span>
+                    </div>
                 </div>
                 <!-- activity list -->
                 <div class="activity_links">
@@ -119,8 +130,12 @@
             <!-- Right Box -->
             <div class="friend_right">
                 <!-- title and button-->
-                <div>
+                <div class="flex">
                     <h4>Activities I'm Joining</h4>
+                    <div class="hover_text">
+                        <a href="/getoutside/activities"><i class="plus fa-solid fa-circle-plus"style="color: #3b8321;"></i></a>
+                        <span class="tooltip_text">Find Activity To Join</span>
+                    </div>
                 </div>
                 <!-- activity list -->
                 <div class="activity_links">
@@ -141,4 +156,5 @@
     </main>
     <!-- End Main -->
 </body>
+<script src="https://kit.fontawesome.com/83a0001255.js" crossorigin="anonymous"></script>
 </html>

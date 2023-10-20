@@ -26,7 +26,6 @@
             <ul class="menu__box">
                 <li><a class="menu__item" href="/getoutside/myprofile">My Profile</a></li>
                 <li><a class="menu__item" href="/getoutside/activities">Activities</a></li>
-                <li><a class="menu__item" href="/getoutside/activities/new">Add Activity</a></li>
                 <li><a class="menu__item" href="/getoutside/friends">Find Friends</a></li>
                 <li><a class="menu__item" href="/logout">Log Out</a></li>
             </ul>
@@ -57,7 +56,7 @@
                     <div class="form_control">
                         <label class="label_width" for="activity">Activity Type:</label>
                         <!-- dropdown menu -->
-                        <select name="activity" value="{{activity.activity}}">
+                        <select id="activity" name="activity" value="{{activity.activity}}">
                             <option value="{{activity.activity}}" hidden selected >{{activity.activity}}</option>
                             <option value="Climbing">Climbing</option>
                             <option value="Cycling">Cycling</option>
@@ -79,13 +78,13 @@
                     <!-- Input 2 -->
                     <div class="form_control">
                         <label class="label_width" for="location">Activity Location:</label>
-                        <input class="input_width" type="text" name="location"  value="{{activity.location}}" >
+                        <input class="input_width" type="text" id="location" name="location"  value="{{activity.location}}" >
                     </div>
                     <!-- End Input 2 -->
                     <!-- Input  -->
                     <div class="form_control">
                         <label class="label_width" for="date">Date:</label>
-                        <input class="input_width" type="date" name="date" value="{{activity.date.strftime("%Y-%m-%d")}}">
+                        <input class="input_width" type="date" id="date" name="date" value="{{activity.date.strftime("%Y-%m-%d")}}">
                     </div>
                     <div>
                     <!-- End Input 3 -->

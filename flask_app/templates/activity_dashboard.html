@@ -12,11 +12,11 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
 </head>
 <body>
+    <!-- main wrapper -->
     <!-- logo bar -->
     <div>
         <img class="logo" src="https://live.staticflickr.com/65535/52792585959_75b5df6be8_h.jpg" alt="getOUTSIDE">
     </div> 
-    <!-- main wrapper -->
     <main>
         <!-- hamburger nav -->
         <div class="hamburger-menu">
@@ -31,7 +31,6 @@
                         Create New Activity
                     </a>
                 </li>
-                <!-- <li><a class="menu__item" href="/getoutside/activities/new">Add Activity</a></li> -->
                 <li><a class="menu__item" href="/getoutside/friends">Find Friends</a></li>
                 <li><a class="menu__item" href="/logout">Log Out</a></li>
             </ul>
@@ -60,7 +59,6 @@
                             Create New Activity
                         </button>
                 </div>
-                    
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -77,7 +75,7 @@
                                     <div class="form_control">
                                         <label class="label_width" for="activity">Activity Type:</label>
                                         <!-- dropdown menu -->
-                                        <select name="activity">
+                                        <select id="activity" name="activity">
                                             <option value="">--Select Activity--</option>
                                             {% if session['activity'] is defined %}
                                             <option value="{{session['activity']}}" hidden selected >{{session['activity']}}</option>
@@ -103,16 +101,14 @@
                                     <!-- Input 2 -->
                                     <div class="form_control">
                                         <label class="label_width" for="location">Activity Location:</label>
-                                        <input class="input_width" type="text" name="location" value="{{session['location']}}">
+                                        <input class="input_width" type="text" id="location" name="location" value="{{session['location']}}">
                                     </div>
                                     <!-- End Input 2 -->
                                     <!-- Input  -->
                                     <div class="form_control">
                                         <label class="label_width" for="date">Date:</label>
-                                        <input class="input_width" type="date" name="date" value="{{session['date']}}">
+                                        <input class="input_width" type="date" id="date" name="date" value="{{session['date']}}">
                                     </div>
-                                    <!-- <div> -->
-                                    <!-- End Input 3 -->
                                     <!-- Buttons -->
                                     <div>
                                         <button type="button" class="click input mt-1 text-light bg-danger bg-gradient rounded-1" data-bs-dismiss="modal">CANCEL</button>

@@ -89,7 +89,7 @@ def follow_user_return_to_homepage(id):
         'user_id' : session['user_id']
     }
     User.follow_user(data)
-    return redirect("/getoutside/myprofile")
+    return redirect("/getoutside/friends")
 
 
 ### UNFOLLOW FRIEND
@@ -102,7 +102,7 @@ def unfollow_user(id):
         'user_id' : session['user_id']
     }
     User.unfollow_user(data)
-    return redirect("/getoutside/activities")
+    return redirect("/getoutside/friends")
 
 
 ### FRIEND SEARCH SINGLE PAGE FORM/RESULTS
@@ -114,7 +114,7 @@ def friend_search_page():
     data ={
         'id': session['user_id']
     }
-    return render_template("friends_search.html", allusers = User.get_all_users_excluding_logged_in_user(data)) 
+    return render_template("friends_search.html", allusers = User.get_all_users_excluding_logged_in_user(data), followers = User.all_followers(data)) 
 
 
 ### Image upload below

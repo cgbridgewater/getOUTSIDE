@@ -22,13 +22,9 @@
 
                 <!-- left box -->
                 <div class="container1">
-                    <h4 class="title">So you're ready!  </h4>
-                    <h4 class="text-start">for the blood, the sweat and the tears..</h4>
-                    <h4 class="title"><em>But wait!</em></h4>
-                    <h4 class="text-start">What are we doing? <br>Where are we going? <br>Who is coming?</h4>
-                    <h4 class="title">Don't be left hanging!</h4>
-
-                    <img class="climber" src="https://live.staticflickr.com/65535/52822743399_b4892e348c.jpg" alt="Rock Climber">
+                    <h3 class="title">We've all been there</h3>
+                    <h4 class="text-center">Everyone knows how to track and log their activities, but what about organizing them?</h4>
+                    <img class="phone" src="../static/images/whereAreYou.png" alt="phone 'where are you'">
                 </div>
                 
 
@@ -38,7 +34,7 @@
                     <!-- reg wrapper -->
                     <div class="register">
                         <!-- header -->
-                        <h3 class="title down">Register to Get OUTSIDE</h3>
+                        <h3 class="title">Register to Get OUTSIDE</h3>
 
                         <!-- form start -->
                         <form action='/getoutside/register' method="POST">
@@ -47,7 +43,7 @@
                                 {% with messages = get_flashed_messages(category_filter=["firstName"]) %}
                                     {% if messages %}
                                         {% for message in messages %}
-                                            <label for="first_name" class="error">{{message}}</label>
+                                            <label class="error">{{message}}</label>
                                         {% endfor %}
                                     {% else %}
                                     <label for="first_name" class="text-sm-start">First Name:</label>
@@ -55,7 +51,7 @@
                                 {% endwith %}
                             </div>
                             <div>
-                                <input type="text" id="first_name" name="first_name" class="input form-control bg-light" value="{{session['first_name']}}">
+                                <input type="text" name="first_name" class="input form-control bg-light" value="{{session['first_name']}}">
                             </div>
                             <!-- END first name section -->
                             <!-- Last name section -->
@@ -63,7 +59,7 @@
                                 {% with messages = get_flashed_messages(category_filter=["lastName"]) %}
                                     {% if messages %}
                                         {% for message in messages %}
-                                            <label for="last_name" class="error">{{message}}</label>
+                                            <label class="error">{{message}}</label>
                                         {% endfor %}
                                     {% else %}
                                     <label for="last_name" class="text-sm-start">Last Name:</label>
@@ -71,7 +67,7 @@
                                 {% endwith %}
                             </div>
                             <div>
-                                <input type="text" id="last_name" name="last_name" class="input form-control bg-light" value="{{session['last_name']}}">
+                                <input type="text" name="last_name" class="input form-control bg-light" value="{{session['last_name']}}">
                             </div>
                             <!-- END Last name section -->
                             <!-- Email section -->
@@ -79,7 +75,7 @@
                                 {% with messages = get_flashed_messages(category_filter=["email"]) %}
                                     {% if messages %}
                                         {% for message in messages %}
-                                            <label for="email" class="error">{{message}}</label>
+                                            <label class="error">{{message}}</label>
                                         {% endfor %}
                                     {% else %}
                                     <label for="email" class="text-sm-start">Email:</label>
@@ -87,7 +83,7 @@
                                 {% endwith %}
                             </div>
                             <div>
-                                <input type="text" id="email" name="email" class="input form-control bg-light" value="{{session['email']}}">
+                                <input type="text" name="email" class="input form-control bg-light" value="{{session['email']}}">
                             </div>
                             <!-- End Email section -->
                             <!-- Password section -->
@@ -95,14 +91,14 @@
                                 {% with messages = get_flashed_messages(category_filter=["password"]) %}
                                     {% if messages %}
                                         {% for message in messages %}
-                                            <label for="password" class="error">{{message}}</label>
+                                            <label class="error">{{message}}</label>
                                         {% endfor %}
                                     {% else %}
                                     <label for="password" class="text-sm-start">Password:</label>
                                     {% endif %}
                                 {% endwith %}                        </div>
                             <div>
-                                <input type="password" id="password" name="password" class="input form-control bg-light">
+                                <input type="password" name="password" class="input form-control bg-light">
                             </div>
                             <!-- End Password section -->
                             <!-- Confirm Password section -->
@@ -110,21 +106,21 @@
                                 {% with messages = get_flashed_messages(category_filter=["confirm"]) %}
                                     {% if messages %}
                                         {% for message in messages %}
-                                            <label for="confirm_password" class="error">{{message}}</label>
+                                            <label class="error">{{message}}</label>
                                         {% endfor %}
                                     {% else %}
                                     <label for="confirm_password" class="text-sm-start">Confirm Password:</label>
                                     {% endif %}
                                 {% endwith %}                        </div>
                             <div>
-                                <input type="password" id="confirm_password" name="confirm_password" class="input form-control bg-light">
+                                <input type="password" name="confirm_password" class="input form-control bg-light">
                             </div>
                             <!-- EndConfirm Password section -->
                             <!-- login link -->
-                            <div class="button_container">
-                                <button type="submit" value="Register" class="input_button text-light mt-1 bg-success  bg-gradient rounded-2">Get OUTSIDE</button>
+                            <div class="flex">
+                                <button type="submit" value="Register" class="input text-light mt-1 bg-success  bg-gradient rounded-2">Get OUTSIDE</button>
+                                <p>Already a member? <a href="/getoutside/login">Log In!</a></p>
                             </div>
-                            <p class="sign_in">Already a member? <a href="/getoutside/login">Log In!</a></p>
                         </form>
                     <!--form END -->
                     </div>
@@ -137,34 +133,21 @@
 
                 <!-- right box -->
                 <div class="container3">
-                    <h3 class="title">All problems of the past!</h3>
-                    <h5 class="text-center">when you sign up with <span class="outside">Get OUTSIDE</span></h5>
+                    <h3 class="title">Sure, there's the usual ways,</h3>
+                    <h3 class="title">but they come with:</h3>
                     <ul>
-                        <li>Create and host activities</li>
-                        <li>Find and follow friends</li>
-                        <li>Join onto friends activities</li>
-                        <li>Comment on the activity for more info</li>
+                        <li>Forgetting details from a conversation...</li>
+                        <li>Messaging different people and trying to remember who's up to date...</li>
+                        <li>Getting left on read, wondering if they're coming...</li>
+                        <li>Group chats with the "green bubble"...</li>
                     </ul>
-                    <ul class="slideshow">
-                        <li><span></span></li>
-                        <li><span></span></li>
-                        <li><span></span></li>
-                        <li><span></span></li>
-                        <li><span></span></li>
-                    </ul>
-                    
-                    <h5 class="text-center">When the event comes</h5>
-                    <h5 class="text-center">you're ready to</h5>
-                    <h3 class="outside">Get OUTSIDE!</h3>
-
-
+                    <h4 class="text-center">It can all be a headache when </h4>
+                    <h4 class="text-center">all you want to do is...</h4>
+                    <h4 class="outside">Get OUTSIDE!</h4>
+                    <img class="outside_image" src="https://live.staticflickr.com/65535/52822659246_8ee3feab56.jpg" alt="running lake">
+                    <!-- <p class="text-center">Want to give it a try? Click to <a class="menu__item" href="/getoutside/register">Register</a></p> -->
                 </div>
-                
-
-
-
             </div>
         </main>
-
 </body>
 </html>
