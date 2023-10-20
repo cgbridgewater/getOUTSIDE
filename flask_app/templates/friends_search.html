@@ -25,7 +25,6 @@
             <ul class="menu__box">
                 <li><a class="menu__item" href="/getoutside/myprofile">My Profile</a></li>
                 <li><a class="menu__item" href="/getoutside/activities">Activities</a></li>
-                <li><a class="menu__item" href="/getoutside/activities/new">Add Activity</a></li>
                 <li><a class="menu__item" href="/logout">Log Out</a></li>
             </ul>
         </div>
@@ -48,11 +47,28 @@
             </thead>
             <tbody id="filtered_list">
                 {% for user in allusers %}
-                    <tr>
-                        <td><a href="/getoutside/athlete/{{user.id}}">{{user.first_name.capitalize()}} {{user.last_name.capitalize()}} </a></td>                        
-                        <td><a onclick="myalert()" class="btn btn-success m-1 p-1 rounded-2 border-2 border-dark text-decoration-none text-light"  href="/getoutside/athlete/{{user.id}}/follow"  role="button">FOLLOW</a></td>
-                    </tr>
+                <!-- declare counter -->
+                {% set ns = namespace(counter =0) %}
+                <tr>
+                    <!-- loop to see if array contains match -->
+                    {% for follow in followers%}
+                        {% if user.id == follow.friend.id %}
+                            <!-- increase counter when match found -->
+                            {% set ns.counter = ns.counter +1 %}
+                        {% endif%}
+                    {% endfor %}
+                    <!-- display based on matches found -->
+                    <!-- no matches -->
+                    {% if ns.counter == 0 %}
+                        <td><a href="/getoutside/athlete/{{user.id}}">{{user.first_name.capitalize()}} {{user.last_name.capitalize()}} </a></td>
+                        <td>{{ ns.counter }}<a class="btn btn-success m-1 p-1 rounded-2 border-2 border-dark text-decoration-none text-light"  href="/getoutside/athlete/{{user.id}}/follow"  role="button">FOLLOW</a></td>
+                    <!-- matches -->
+                    {% else %}
+                        <td><a href="/getoutside/athlete/{{user.id}}">{{user.first_name.capitalize()}} {{user.last_name.capitalize()}} </a></td>
+                        <td>{{ ns.counter }}<a class="btn btn-success m-1 p-1 rounded-2 border-2 border-dark text-decoration-none text-light"  href="/getoutside/athlete/{{user.id}}/unfollow"  role="button">UNFOLLOW</a></td>
+                    {% endif%}
                 {% endfor %}
+                </tr>
             </tbody>
         </table>
         <!-- END Display Users -->
