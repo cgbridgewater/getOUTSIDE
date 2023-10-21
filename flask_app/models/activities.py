@@ -17,6 +17,7 @@ class Activity:
         self.creator = None
         self.attendee = None
         self.attenders = []
+        self.activities = []
 
 
 ### ACTIVITIES FORM VALIDATIONS CHECK (activitiesController)
@@ -61,6 +62,20 @@ class Activity:
         return connectToMySQL('test_app').query_db(query,data)
 
 
+    ### ALL ACTIVITIES BY USER ID
+    @classmethod
+    def get_all_activities_by_user_id(cls,data):
+        query = """
+            SELECT * FROM activities
+            WHERE user_id = %(id)s;
+        """
+        results = connectToMySQL('test_app').query_db(query,data)
+        pprint(results)
+        activities = []
+        for events in results:
+            activities.append( cls(events) )
+        return activities
+
     ### GET ACTIVITY BY ID with attendees  (activitiesController)
     @classmethod
     def get_one_activity_by_id_with_attendees(cls,data):
@@ -72,7 +87,6 @@ class Activity:
             WHERE activities.id =  %(id)s;
         """
         results = connectToMySQL('test_app').query_db(query,data)
-        pprint(results)
         one_activity = cls(results[0])
         one_activity.creator = users.User({
                 "id": results[0]['creator.id'],
@@ -230,6 +244,34 @@ class Activity:
         for row in results:
             one_attendee = (row)
             one_attendee = users.User({
+                "id": row['user_id'],
+                "first_name": row['first_name'],
+                "last_name": row['last_name'],
+                "image_file": row['image_file'],
+                "email": row['email'],
+                "password": row['password'],
+                "created_at": row['created_at'],
+                "updated_at": row['updated_at'],
+            })
+            all_attendees.append(one_attendee)
+        return all_attendees
+
+### GET ALL ATTENDIES TO EVENT  (activitiesController) TEST TEST TEST
+    @classmethod
+    def get_all_events_attending_by_user_with_id(cls, data):
+        query = """
+            SELECT * FROM join_activity
+            JOIN users ON join_activity.user_id = users.id
+            WHERE join_activity.user_id =  %(id)s;
+        """
+        results = connectToMySQL("test_app").query_db(query, data)
+        pprint("HERHERHERHEHREHREHRHERHEHRHEHERHERHERHEHHERHHERHERHERHEHREHREHRHERHEHRHEHERHERHERHEHHERH CHECK HERE!!")
+        pprint(results)
+        all_attendees = [] 
+        for row in results:
+            one_attendee = (row)
+            one_attendee = users.User({
+                "activity_id": row['activity_id'],
                 "id": row['user_id'],
                 "first_name": row['first_name'],
                 "last_name": row['last_name'],

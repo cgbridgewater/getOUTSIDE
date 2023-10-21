@@ -20,7 +20,7 @@ h1 {
 }
 
 .formContainer {
-	width:20%;
+	width:25%;
 	min-width:350px;
 	margin:1% auto;
 	padding:15px;
@@ -37,9 +37,28 @@ h1 {
 	background-color:lightgrey;
 	border-color: green;
 	border-radius:5px;
-	min-width:260px;
-    color: green;
+	min-width:300px;
+    color: brown;
+	font-size: 18px;
     font-weight: 700;
+	text-transform: uppercase;
+	margin-left: 32px;
+}
+
+.filter-post {
+	display: flex;
+}
+
+.x-out{
+	color: brown;
+	font-size: 18px;
+	position: relative;
+	top: 2.5px;
+	right: 32px;
+}
+
+.x-out:hover {
+	color: red;
 }
 
 .button_container {
@@ -56,9 +75,10 @@ h1 {
 }
 
 .display_table {
-	width:20%;
+	width:25%;
 	min-width:350px;
 	margin: 3% auto;
+	padding: 5px;
 	border: 3px solid green;
 	text-align:center;
 	box-shadow: 5px 8px 10px rgba(2, 20, 2, 0.5);
@@ -66,20 +86,78 @@ h1 {
 
 tr {
 	background-color: honeydew;
-    opacity: 85%;
+    /* opacity: 85%; */
 }
 
-a:link, a:visited,a:hover {
+td {
+	padding: 0 0 0 15px;
+}
+
+.text {
+	color: green;
+	font-size: 22px;
+}
+
+.text:link, .text:visited,.text:hover {
     text-decoration: none;
-    color: green;
     font-weight: 600;
 }
 
-a:hover{
-    color: green;
+.text:hover{
+    color: brown;
     text-shadow:0px 0px 30px darkgreen;
     -moz-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
     -webkit-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
 }
+
+
+.btn {
+	width: 110px;
+    padding: 2px 5px;
+    margin: 4px;
+	color: #FFFEF5;
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+	border-radius: 50px !important;
+    -webkit-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.5) inset;
+    -moz-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.5) inset;
+    box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.5) inset;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+
+.follow {
+	background-color: green;
+}
+
+.follow:hover {
+	background-color: green;
+	opacity: 85%;
+}
+
+.unfollow {
+	background-color: brown;
+}
+
+.unfollow:hover {
+	background-color: brown;
+	opacity: 85%;
+}
+
+.btn:active {
+	-webkit-transform: scale(0.80);
+	-moz-transform: scale(0.80);
+	-ms-transform: scale(0.80);
+	-o-transform: scale(0.80);
+	transform: scale(0.80);
+	background-color: inherit;
+}
+

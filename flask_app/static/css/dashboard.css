@@ -100,9 +100,51 @@
     margin:3px;
 }
 
+.activity_link:hover {
+    text-decoration: none;
+    color: brown;
+    margin:3px;
+    text-shadow:0px 0px 10px darkgreen;
+    -moz-transition: all 0.1s ease-in;
+    -o-transition: all 0.1s ease-in;
+    -webkit-transition: all 0.1s ease-in;
+    transition: all 0.1s ease-in;
+}
+
+.unjoin_button {
+    position: relative;
+    top: 15px;
+    color: brown;
+}
+
+.unjoin_button:hover {
+    color: red;
+}
+
+.join_button {
+    position: relative;
+    top: 15px;
+    color: green;
+}
+
+.join_button:hover {
+    color: darkgreen;
+}
+
+.edit_button {
+    position: relative;
+    top: 15px;
+    color: blue;
+}
+
+.edit_button:hover {
+    color: darkblue;
+}
+
 th,td {
     padding: 3px 8px;
 }
+
 tr {
     border: 1px solid green;
 }

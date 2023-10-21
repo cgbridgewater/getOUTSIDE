@@ -16,7 +16,7 @@ def user_dashboard():
     data ={
         'id': session['user_id']
     }
-    return render_template("user_profile.html", user = User.get_user_by_id(data), activities = Activity.get_all_activities(), joined = Activity.get_all_activities_and_attendees(data), followers = User.all_followers(data))
+    return render_template("user_profile.html", user = User.get_user_by_id(data), activities = Activity.get_all_activities(), joined = Activity.get_all_activities_and_attendees(data), followers = User.all_followers(data), counts = Activity.get_all_activities_by_user_id(data))
 
 
 ### UPDATE ATHLETE FORM (protected)
@@ -76,12 +76,15 @@ def get_user_by_id(id):
     data = {
     "id" : id
     }
-    return render_template("user_one_view.html", user = User.get_user_by_id(data), activities = Activity.get_all_activities())
+    logged_user ={
+        'id': session['user_id']
+    }
+    return render_template("user_one_view.html", user = User.get_user_by_id(data), activities = Activity.get_all_activities(), followers = User.all_followers(logged_user), counts = Activity.get_all_activities_by_user_id(data))
 
 
-### FOLLOW FRIEND 
+### FOLLOW FRIEND /RETURN TO FRIEND SEARCH
 @app.route('/getoutside/athlete/<int:id>/follow')
-def follow_user_return_to_homepage(id):
+def follow_user_return_to_search(id):
     if 'user_id' not in session:
         return redirect('/logout')
     data = {
@@ -91,10 +94,22 @@ def follow_user_return_to_homepage(id):
     User.follow_user(data)
     return redirect("/getoutside/friends")
 
+### FOLLOW FRIEND / RETURN TO USER BY ID
+@app.route('/getoutside/athlete/<int:id>/followbyid')
+def follow_user_return_to_userbyid(id):
+    if 'user_id' not in session:
+        return redirect('/logout')
+    data = {
+        'friend_id' : id,
+        'user_id' : session['user_id']
+    }
+    User.follow_user(data)
+    return redirect(f"/getoutside/athlete/{id}")
 
-### UNFOLLOW FRIEND
+
+### UNFOLLOW FRIEND / RETURN TO FIND FRIEND
 @app.route('/getoutside/athlete/<int:id>/unfollow')
-def unfollow_user(id):
+def unfollow_user_return_to_search(id):
     if 'user_id' not in session:
         return redirect('/logout')
     data = {
@@ -103,6 +118,30 @@ def unfollow_user(id):
     }
     User.unfollow_user(data)
     return redirect("/getoutside/friends")
+
+### UNFOLLOW FRIEND / RETURN TO USER BY ID
+@app.route('/getoutside/athlete/<int:id>/unfollowbyid')
+def unfollow_user_return_to_userbyid(id):
+    if 'user_id' not in session:
+        return redirect('/logout')
+    data = {
+        'friend_id' : id,
+        'user_id' : session['user_id']
+    }
+    User.unfollow_user(data)
+    return redirect(f"/getoutside/athlete/{id}")
+
+### UNFOLLOW FRIEND / RETURN TO USER BY ID
+@app.route('/getoutside/athlete/<int:id>/unfollowing')
+def unfollow_user_return_to_profile(id):
+    if 'user_id' not in session:
+        return redirect('/logout')
+    data = {
+        'friend_id' : id,
+        'user_id' : session['user_id']
+    }
+    User.unfollow_user(data)
+    return redirect(f"/getoutside/myprofile")
 
 
 ### FRIEND SEARCH SINGLE PAGE FORM/RESULTS

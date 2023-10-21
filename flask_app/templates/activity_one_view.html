@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View {{activity.creator.first_name}}'s Activity</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/menu.css') }}">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/one_view.css') }}">
@@ -150,7 +151,7 @@
                     {% if attendee.id == session.user_id %}
                     <div class="flex">
                         <h5 class="green">{{attendee.first_name.capitalize()}} {{attendee.last_name.capitalize()}}</h5>
-                        <a class="btn btn-success rounded-2 border-2 border-dark text-decoration-none text-light"  href="/getoutside/activity/{{activity.id}}/unjoin"   role="button">PASS</a>
+                        <a class=""  href="/getoutside/activity/{{activity.id}}/unjoin"><i class="fa-solid fa-square-xmark fa-xl" style="color: #ff0000;"></i> </a>
                     </div>
                     {% else %}
                         {% if attendee.first_name == None %}
@@ -203,4 +204,5 @@
         <!-- end activities container -->
     </main>
 <!-- End Main -->
+<script src="https://kit.fontawesome.com/83a0001255.js" crossorigin="anonymous"></script>
 </body>

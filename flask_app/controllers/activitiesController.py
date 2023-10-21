@@ -6,13 +6,11 @@ from flask_app.models.comments import Comment
 from flask_app.models.activities import Activity
 
 
-###  ACTIVITY DASH BOARD
+###  Landing Page
 @app.route('/getoutside')
 @app.route('/getoutside/')
 def dashboard():
     return render_template("landing_page.html")
-
-
 
 
 ###  ACTIVITY DASH BOARD
@@ -25,7 +23,7 @@ def activity_dashboard():
     data ={
         'id': session['user_id']
     }
-    return render_template("activity_dashboard.html", user = User.get_user_by_id(data), activities = Activity.get_all_activities())
+    return render_template("activity_dashboard.html", user = User.get_user_by_id(data), activities = Activity.get_all_activities(),attending = Activity.get_all_activities_and_attendees(data))
 
 
 ### NEW ACTIVITY FORM
@@ -155,8 +153,20 @@ def attend_activity_return_to_activity_page(id):
     Activity.attend_activity(data)
     return redirect(f"/getoutside/activity/{id}")
 
+### ATTEND ACTIVITY ROUTE WITH TO DASHBOARD
+@app.route('/getoutside/activity/<int:id>/join3')
+def attend_activity_return_to_activity_dash(id):
+    if 'user_id' not in session:
+        return redirect('/logout')
+    data = {
+        'activity_id' : id,
+        'user_id' : session['user_id']
+    }
+    Activity.attend_activity(data)
+    return redirect("/getoutside/activities")
 
-### UNATTEND ACTIVITY RETURN TO HOME PAGE
+
+### UNATTEND ACTIVITY RETURN TO ACTIVITY PAGE
 @app.route('/getoutside/activity/<int:id>/unjoin')
 def unattend_activity(id):
     if 'user_id' not in session:
@@ -167,6 +177,30 @@ def unattend_activity(id):
     }
     Activity.unattend_activity(data)
     return redirect(f"/getoutside/activity/{id}")
+
+### UNATTEND ACTIVITY RETURN TO PROFILE PAGE
+@app.route('/getoutside/activity/<int:id>/remove')
+def remove_activity(id):
+    if 'user_id' not in session:
+        return redirect('/logout')
+    data = {
+        'activity_id' : id,
+        'user_id' : session['user_id']
+    }
+    Activity.unattend_activity(data)
+    return redirect(f"/getoutside/myprofile")
+
+### UNATTEND ACTIVITY RETURN TO ACTIVITY DASHBOARD
+@app.route('/getoutside/activity/<int:id>/un-join')
+def remove_activity_to_dashboard(id):
+    if 'user_id' not in session:
+        return redirect('/logout')
+    data = {
+        'activity_id' : id,
+        'user_id' : session['user_id']
+    }
+    Activity.unattend_activity(data)
+    return redirect(f"/getoutside/activities")
 
 
 ### DELETE ACTIVITY BY ID (Protected)

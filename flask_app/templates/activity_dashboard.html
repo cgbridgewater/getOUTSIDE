@@ -10,6 +10,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/modal.css') }}">
 </head>
 <body>
     <!-- main wrapper -->
@@ -64,7 +66,7 @@
                     <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Create A New Activity</h1>
+                                <h1 class="modal-title" id="exampleModalLabel">Create A New Activity</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
@@ -147,24 +149,52 @@
                 <!-- table -->
                 <table id="userTable" class="activity_table table table-hover border border-3 border-success">
                     <tbody>
-                        <tr>
                         <!-- loop through activities -->
                         {% for activity in activities %}
                         <!-- filter logged in user -->
                         {% if session.user_id != activity.creator.id %}
+                            <!-- set counter -->
+                            {% set ns = namespace(counter =0) %}
+                            <!-- loop through to check event joined matches -->
+                            {% for event in attending %}
+                                {% if activity.id == event.id %}
+                                    {% set ns.counter = ns.counter +1 %}
+                                {% endif%}
+                            {% endfor %}
+                            <!-- end loop -->
                             <!-- display data -->
-                            <td>   
-                                <a class="activity_link" href="/getoutside/activity/{{activity.id}}">{{activity.creator.first_name.capitalize()}} {{activity.creator.last_name.capitalize()}} is going {{activity.activity}} at {{activity.location}} on {{activity.date.strftime("%B %e, %Y")}} </a>
-                            </td> 
-                        </tr>
-                        {% else %}
+                                {% if ns.counter == 1 %}
+                                <tr>
+                                    <td>   
+                                        <a class="activity_link" href="/getoutside/activity/{{activity.id}}">{{activity.creator.first_name.capitalize()}} {{activity.creator.last_name.capitalize()}} is going {{activity.activity}} at {{activity.location}}. <br>On {{activity.date.strftime("%B %e, %Y")}} </a>
+                                    </td>
+                                    <td>
+                                        <a class="unjoin_button" href="/getoutside/activity/{{activity.id}}/un-join"><i class="fa-solid fa-square-xmark fa-xl" id="unjoin"></i></a>
+                                    </td> 
+                                </tr>
+                                {% else %}
+                                <tr>
+                                    <td>
+                                        <a class="activity_link" href="/getoutside/activity/{{activity.id}}">{{activity.creator.first_name.capitalize()}} {{activity.creator.last_name.capitalize()}} is going {{activity.activity}} at {{activity.location}}. <br>On {{activity.date.strftime("%B %e, %Y")}} </a>
+                                    </td>
+                                    <td>
+                                        <a class="join_button" href="/getoutside/activity/{{activity.id}}/join3"><i class="fa-solid fa-square-check fa-xl" id="join"></i></a>
+                                    </td>
+                                </tr>
+                                {% endif%}
+                            {% else %}
                             <!-- display data -->
-                            <td>   
-                                <a class="activity_link" href="/getoutside/activity/{{activity.id}}"><b>You</b>  are going {{activity.activity}} at {{activity.location}} on {{activity.date.strftime("%B %e, %Y")}} </a>
-                            </td> 
-                        </tr>
-                        {% endif %}
+                            <tr>
+                                <td>   
+                                    <a class="activity_link" href="/getoutside/activity/{{activity.id}}"><b>You</b>  are going {{activity.activity}} at {{activity.location}}. <br>On {{activity.date.strftime("%B %e, %Y")}} </a>
+                                </td>
+                                <td>
+                                    <a class="edit_button" href="/getoutside/activity/{{activity.id}}/edit"><i class="fa-solid fa-pen-to-square fa-xl" id="edit"></i></a>
+                                </td> 
+                            </tr>
+                                {% endif %}
                         {% endfor %}
+                        </tr>
                     </tbody>
                 </table>
                 <!-- Table END -->
@@ -175,5 +205,6 @@
     <!-- End Main Wrapper -->
     <script src="{{ url_for('static', filename='js/search_script.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/83a0001255.js" crossorigin="anonymous"></script>
 </body>
 </html>

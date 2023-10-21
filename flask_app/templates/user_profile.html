@@ -44,7 +44,7 @@
                 </div>
                 <!-- profile buttons -->
                 <div class="button_flex">
-                    <a class="find_friend btn btn-success m-1 p-1 rounded-2 border-2 border-dark " href="/getoutside/athlete/update" role="button">EDIT</a>
+                    <a class="edit_btn " href="/getoutside/athlete/update" role="button">EDIT</a>
                 </div>
             </div>
             <!-- end user image/name box -->
@@ -53,16 +53,27 @@
                 <table class="table">
                     <tbody>
                     <tr>
-                        <td><h4>Name:</h4></td>
-                        <td><h4>{{ user.first_name.capitalize() }} {{ user.last_name.capitalize() }}</h4></td>
+                        <td><h4>User Name:</h4></td>
+                        <td><h4 class="text-end me-4">{{ user.first_name.capitalize() }} {{ user.last_name.capitalize() }}</h4></td>
                     </tr>
                     <tr>
-                        <td><h4>Email:</h4></td>
-                        <td><h4>{{ user.email }}</h4></td>
+                        <td><h4>User Email:</h4></td>
+                        <td><h4 class="text-end me-4">{{ user.email }}</h4></td>
+                    </tr>
+                    <tr>
+                        <td><h4>Events Created:</h4></td>
+                            <!-- declare events counter -->
+                            {% set ns = namespace(events =0) %}
+                            <!-- loop through events -->
+                            {% for count in counts%}
+                            <!-- increase counter for each event found -->
+                            {% set ns.events = ns.events +1 %}
+                            {% endfor %}
+                        <td><h4 class="text-end me-4">{{ ns.events }}</h4></td>
                     </tr>
                     <tr>
                         <td><h4>Member Since:</h4></td>
-                        <td><h4>{{ user.created_at.strftime("%B %e, %Y") }}</h4></td>
+                        <td><h4 class="text-end me-4">{{ user.created_at.strftime("%B %e, %Y") }}</h4></td>
                     </tr>
                     </tbody>
                 </table>
@@ -87,8 +98,9 @@
                     <div>
                         {% for follower in followers %}
                         <ul>
-                            <h5>
+                            <h5 class="d-flex justify-content-between align-items-center">
                                 <a class="link" href="/getoutside/athlete/{{follower.friend.id}}">{{follower.friend.first_name.capitalize()}} {{follower.friend.last_name.capitalize()}}</a>
+                                <a class="btn unfollow" href="/getoutside/athlete/{{follower.friend.id}}/unfollowing"><i class="fa-solid fa-square-xmark fa-xl" id="x_out"></i></a>
                             </h5>
                         </ul>
                         {% endfor %}
@@ -109,7 +121,7 @@
                 <div class="flex">
                     <h4>Activities I'm Leading</h4>
                     <div class="hover_text">
-                        <a href="/getoutside/activities/new"><i class="plus fa-solid fa-circle-plus"style="color: #3b8321;"></i></a>
+                        <a href="/getoutside/activities/new"><i class="plus fa-solid fa-circle-plus"></i></a>
                         <span class="tooltip_text">Create New Activity</span>
                     </div>
                 </div>
@@ -127,13 +139,14 @@
                     {% endfor %}
                 </div>
             </div>
+
             <!-- Right Box -->
             <div class="friend_right">
                 <!-- title and button-->
                 <div class="flex">
                     <h4>Activities I'm Joining</h4>
                     <div class="hover_text">
-                        <a href="/getoutside/activities"><i class="plus fa-solid fa-circle-plus"style="color: #3b8321;"></i></a>
+                        <a href="/getoutside/activities"><i class="plus fa-solid fa-circle-plus"></i></a>
                         <span class="tooltip_text">Find Activity To Join</span>
                     </div>
                 </div>
@@ -143,8 +156,9 @@
                     {% for a in joined %}
                         <!-- filter for only logged in user -->
                         <!-- display data -->
-                            <h5>
+                            <h5 class="d-flex justify-content-between align-content-center">
                                 <a class="link" href="/getoutside/activity/{{a.id}}"> {{a.creator.first_name.capitalize()}} {{a.creator.last_name.capitalize()}} is going {{a.activity}} at {{a.location}} on {{a.date.strftime("%B %e, %Y")}} </a>
+                                <a class="btn unfollow" href="/getoutside/activity/{{a.id}}/remove"><i class="fa-solid fa-square-xmark fa-xl" id="x_out"></i></a>
                             </h5>
                     {% endfor %}
                 </div>

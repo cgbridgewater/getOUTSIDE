@@ -112,6 +112,7 @@ class User:
         WHERE activities.user_id = %(id)s;
         """
         results = connectToMySQL('test_app').query_db(query,data)
+        pprint("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
         pprint(results)
         one_user = cls(results[0])
         for row in results:

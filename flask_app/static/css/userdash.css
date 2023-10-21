@@ -7,7 +7,7 @@
 
 .top_wrapper {
     width: 90%;
-    margin-left: 5%;
+    margin:auto;
     margin-top: 10px;
     padding: 10px;
     display: flex;
@@ -51,9 +51,42 @@
     justify-content: space-evenly;
 }
 
-.profile_button {
-    width:100px;
-    border-radius: 5px;
+
+.edit_btn {
+	width: 110px;
+    padding: 2px 5px;
+    margin: 4px;
+	color: #FFFEF5;
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+	border-radius: 50px !important;
+    -webkit-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.5) inset;
+    -moz-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.5) inset;
+    box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.5) inset;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    background-color: green;
+}
+
+
+.edit_btn:hover {
+	background-color: green;
+    color: #FFFEF5;
+	opacity: 90%;
+}
+
+.edit_btn:active {
+	-webkit-transform: scale(0.80);
+	-moz-transform: scale(0.80);
+	-ms-transform: scale(0.80);
+	-o-transform: scale(0.80);
+	transform: scale(0.80);
+	background-color: inherit;
 }
 
 .profile_info{
@@ -83,8 +116,13 @@ tr {
     position: relative;
     top: 5px;
     left: 10px;
-    font-size: 20px;
+    font-size: 22px;
     color: #3b8321;
+}
+
+.plus:hover {
+    color: rgb(60, 129, 60);
+    opacity: 85%;
 }
 
 
@@ -141,6 +179,14 @@ tr {
     background-color:#FFFFF5;
 }
 
+#x_out {
+    color:brown;
+}
+
+#x_out:hover {
+    color:red;
+}
+
 .find_friend, .add_activity{
     padding: 8px;
     margin-right: 10px;
@@ -157,7 +203,9 @@ tr {
 }
 
 .activity_container {
-    padding: 0 5%;
+    width: 90%;
+    margin: auto;
+    padding: 0 10px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
