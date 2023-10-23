@@ -20,7 +20,7 @@ def user_dashboard():
 
 
 ### UPDATE ATHLETE FORM (protected)
-@app.route('/getoutside/athlete/update')
+@app.route('/getoutside/myprofile/edit')
 def edit_user_form():
     if 'user_id' not in session:
         return redirect('/logout')
@@ -34,7 +34,7 @@ def edit_user_form():
 
 
 ### ATHLETE UPDATE FORM POST ACTION (protected)
-@app.route('/getoutside/athlete/update', methods =['POST'])
+@app.route('/getoutside/myprofile/edit', methods =['POST'])
 def update_user_form_action():
     if 'user_id' not in session:
         return redirect('/logout')
@@ -48,13 +48,13 @@ def update_user_form_action():
     if session['user_id'] != user_check.id:
         return redirect('/logout')
     if not User.update_validation_check(data):
-        return redirect('/getoutside/athlete/update')
+        return redirect('/getoutside/myprofile/edit')
     User.update_user_by_id(data)
     return redirect("/getoutside/myprofile") 
 
 
 ### ATHLETUS DELETUS (protected)
-@app.route('/getoutside/athlete/delete')
+@app.route('/getoutside/myprofile/delete')
 def delete_user_route():
     if 'user_id' not in session:
         return redirect('/logout')
