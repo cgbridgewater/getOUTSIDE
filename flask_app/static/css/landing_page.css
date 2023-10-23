@@ -21,12 +21,9 @@
 
 /* HEADER */
 header {
-    /* background-image: url("https://live.staticflickr.com/65535/53263849475_d8c786d572_b.jpg"); Green */
-    /* background-image: url("https://live.staticflickr.com/65535/53262482542_e767ab7340_b.jpg");  */
     background-image: url("https://d3owbckoeihl9o.cloudfront.net/images/10adv/wp-content/uploads/2018/12/USA-Oregon-Bend-Pano.jpg");
     background-position: center;
     background-size: cover;
-    /* background-size: 100% 100% ; */
     background-repeat: no-repeat;
     height: 25dvh;
     width: 100%;
@@ -142,15 +139,6 @@ header {
     width: 325px;
     margin: 0 auto;
 }
-/* .phone {
-    border: 2px solid green;
-    border-radius: 10px;
-    height: 450px;
-    width: 310px;
-    margin: 0 auto;
-} */
-
-/* CENTER BOX */
 
 .down {
     margin-bottom: 20px;
@@ -305,22 +293,22 @@ list-style-type: none;
 
 
 .slideshow li:nth-child(1) span { 
-    background-image: url("https://uploads-ssl.webflow.com/5976a3655fcd654cb3d604ca/5bfa14d04ae3429879830ee4_home-hero.jpg"); 
+    background-image: url("https://live.staticflickr.com/65535/52823001058_1c534afa53_z.jpg"); 
 }
 .slideshow li:nth-child(2) span { 
-    background-image: url("https://uploads-ssl.webflow.com/5976a3655fcd654cb3d604ca/5c00c9ecd82b40364fc97f4b_bridge.jpg");
+    background-image: url("https://live.staticflickr.com/65535/52822563876_f75e7ae2b3.jpg");
     animation-delay: 3s; 
 }
 .slideshow li:nth-child(3) span { 
-    background-image: url("https://uploads-ssl.webflow.com/5976a3655fcd654cb3d604ca/5c00c9963ea913260bb41b0e_powerlines.jpg");
+    background-image: url("https://live.staticflickr.com/65535/52822659246_8ee3feab56.jpg");
     animation-delay: 6s; 
 }
 .slideshow li:nth-child(4) span { 
-    background-image: url("https://uploads-ssl.webflow.com/5976a3655fcd654cb3d604ca/5bfa14d04ae3429879830ee4_home-hero.jpg");   
+    background-image: url("https://live.staticflickr.com/65535/52822971610_812ee173a3_w.jpg");   
     animation-delay: 9s; 
 }
 .slideshow li:nth-child(5) span { 
-    background-image: url("https://uploads-ssl.webflow.com/5976a3655fcd654cb3d604ca/5c00c9963ea913260bb41b0e_powerlines.jpg");
+    background-image: url("https://live.staticflickr.com/65535/52823097098_9a373cb198_c.jpg");
     animation-delay: 12s; 
 }
 
