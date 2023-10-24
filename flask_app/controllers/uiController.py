@@ -5,6 +5,7 @@ from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app)
 
 
+
 ### REDIRECT TO DOMAIN CONTROL ROUTE
 @app.route('/')
 def index():
@@ -15,6 +16,20 @@ def index():
 @app.route('/getoutside/register')
 def register_page():
     return render_template("register.html")
+
+
+### TO REGISTRATION PAGE
+@app.route("/getoutside/toregister")
+def redirect_to_landing():
+    session.clear()
+    return redirect("/getoutside")
+
+
+### TO LOGIN PAGE
+@app.route("/getoutside/tologin")
+def redirect_to_login():
+    session.clear()
+    return redirect("/getoutside/login")
 
 
 ### REGISTRATION FORM POST ACTION
