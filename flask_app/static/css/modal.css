@@ -45,7 +45,7 @@ select, option {
 
 
 .modal-content {
-    height: 280px;
+    min-height: 280px;
     min-width: 350px;
     width: 40dvw;
     margin: auto;

@@ -52,12 +52,12 @@
             <!-- main wrapper -->
             <div class="wrapper">
                 <!-- top row text -->
-                <div class="flex">
+                <div class="flex2">
                     <h4 class="green">See what everyone is up to!</h4>
                     <!-- <a class="activity_link" href="/getoutside/activities/new"><strong>Create a new activity!</strong></a> -->
                     
                     <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn btn-success mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Create New Activity
                         </button>
                 </div>
@@ -65,11 +65,13 @@
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title" id="exampleModalLabel">Create A New Activity</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
+                            <!-- <div class="modal-header">
+                            </div> -->
                             <div class="modal-body">
+                                <div class="d-flex justify-content-between align-content-center">
+                                    <h1 class="modal-title" id="exampleModalLabel">Create A New Activity</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
                                 <!-- form start -->
                                 <form action='/getoutside/activities/new1' method="POST">
                                     <!-- Input 1 -->
@@ -126,8 +128,8 @@
                 <!-- END MODAL -->
                 <!-- bottom row text with select sort -->
                 <div class="flex mb-1">
-                    <h6>(click activity to view details)</h6>
-                    <div class="filter-post" >
+                    <h6 class="mt-1">(click activity to view details)</h6>
+                    <div class="filter-post my-1" >
                         <select name="filter" id="filter" onchange="searchUser()">
                             <option value="">--Filter By Activity--</option>
                             <option value="Climbing">Climbing</option>
@@ -178,7 +180,7 @@
                                         <a class="activity_link" href="/getoutside/activity/{{activity.id}}">{{activity.creator.first_name.capitalize()}} {{activity.creator.last_name.capitalize()}} is going {{activity.activity}} at {{activity.location}}. <br>On {{activity.date.strftime("%B %e, %Y")}} </a>
                                     </td>
                                     <td>
-                                        <a class="join_button" href="/getoutside/activity/{{activity.id}}/join3"><i class="fa-solid fa-square-check fa-xl" id="join"></i></a>
+                                        <a class="join_button" href="/getoutside/activity/{{activity.id}}/join3"><i class="fa-solid fa-arrow-up-right-from-square fa-xl" id="join"></i></a>
                                     </td>
                                 </tr>
                                 {% endif%}

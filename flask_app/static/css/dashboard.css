@@ -10,7 +10,7 @@
     height: 25vh;
 }
 
-.green{
+.green {
     color: green;
     font-weight: 700;
 }
@@ -31,6 +31,26 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.flex2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+@media (max-width:801px) {
+    .flex2{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .flex{
+        flex-direction:column-reverse;
+        justify-content: center;
+    }
+}
+
 
 .time-position {
     position: relative;
