@@ -67,13 +67,13 @@ class User:
     def update_validation_check(user):
         is_valid = True
         if len(user['first_name']) < 3:
-            flash("First name must be at least 3 charactors long.", "update")
+            flash("Must be at least 3 charactors long.", "update_first_name")
             is_valid = False
         if len(user['last_name']) < 3:
-            flash("Last name must be at least 3 charactors long.", "update")
+            flash("Must be at least 3 charactors long.", "update_last_name")
             is_valid = False
         if not EMAIL_REGEX.match(user['email']):
-            flash("Invalid email address!", "update")
+            flash("Invalid email!", "update_email")
             is_valid = False
         return is_valid
 

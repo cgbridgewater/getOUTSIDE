@@ -6,19 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get OUTSIDE!</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/activityform.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/menu.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/page_header.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/buttons.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/modal.css') }}">
 </head>
 <body>
-    <!-- main wrapper -->
     <!-- logo bar -->
-    <div>
-        <img class="logo" src="https://live.staticflickr.com/65535/52792585959_75b5df6be8_h.jpg" alt="getOUTSIDE">
-    </div> 
+    <header>
+        <h1 class="header_text">Get OUTSIDE</h1>
+    </header>
+    <!-- main wrapper -->
     <main>
         <!-- hamburger nav -->
         <div class="hamburger-menu">
@@ -53,11 +56,11 @@
             <div class="wrapper">
                 <!-- top row text -->
                 <div class="flex2">
-                    <h4 class="green">See what everyone is up to!</h4>
+                    <h4 class="text_green">See what everyone is up to!</h4>
                     <!-- <a class="activity_link" href="/getoutside/activities/new"><strong>Create a new activity!</strong></a> -->
                     
                     <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-success mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="create_button green" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Create New Activity
                         </button>
                 </div>
@@ -69,17 +72,17 @@
                             </div> -->
                             <div class="modal-body">
                                 <div class="d-flex justify-content-between align-content-center">
-                                    <h1 class="modal-title" id="exampleModalLabel">Create A New Activity</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <h1 class="modal-title" id="exampleModalLabel">Create An Activity</h1>
+                                    <a class="close" data-bs-dismiss="modal" aria-label="Close"><i class="button_close fa-regular fa-circle-xmark fa-2xl"></i></a>
                                 </div>
                                 <!-- form start -->
                                 <form action='/getoutside/activities/new1' method="POST">
                                     <!-- Input 1 -->
                                     <input type="hidden" name="user_id" value="{{session['user_id']}}">
                                     <div class="form_control">
-                                        <label class="label_width" for="activity">Activity Type:</label>
+                                        <label class="label" for="activity">Activity Type:</label>
                                         <!-- dropdown menu -->
-                                        <select id="activity" name="activity">
+                                        <select class="input_width" id="activity" name="activity">
                                             <option value="">--Select Activity--</option>
                                             {% if session['activity'] is defined %}
                                             <option value="{{session['activity']}}" hidden selected >{{session['activity']}}</option>
@@ -104,19 +107,19 @@
                                     <!-- End Input 1 -->
                                     <!-- Input 2 -->
                                     <div class="form_control">
-                                        <label class="label_width" for="location">Activity Location:</label>
+                                        <label class="label" for="location">Activity Location:</label>
                                         <input class="input_width" type="text" id="location" name="location" value="{{session['location']}}">
                                     </div>
                                     <!-- End Input 2 -->
                                     <!-- Input  -->
                                     <div class="form_control">
-                                        <label class="label_width" for="date">Date:</label>
+                                        <label class="label" for="date">Date:</label>
                                         <input class="input_width" type="date" id="date" name="date" value="{{session['date']}}">
                                     </div>
                                     <!-- Buttons -->
-                                    <div>
-                                        <button type="button" class="click input mt-1 text-light bg-danger bg-gradient rounded-1" data-bs-dismiss="modal">CANCEL</button>
-                                        <button type="submit" value="Login" class="click input mt-1 text-light bg-success bg-gradient rounded-1 ">SUBMIT</button>
+                                    <div class="buttons">
+                                        <button type="button" class="button brown" data-bs-dismiss="modal">CANCEL</button>
+                                        <button type="submit" value="Login" class="button green">SUBMIT</button>
                                     </div>
                                     <!-- End buttons -->
                                 </form>
@@ -205,7 +208,7 @@
         <!-- End Contend Wrapper -->
     </main>
     <!-- End Main Wrapper -->
-    <script src="{{ url_for('static', filename='js/search_script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/filter_script.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/83a0001255.js" crossorigin="anonymous"></script>
 </body>

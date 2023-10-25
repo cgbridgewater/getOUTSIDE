@@ -18,7 +18,7 @@ class Comment:
     def comment_validation_check(comment):
         is_valid = True
         if len(comment['text']) < 3:
-            flash("Comment must be at least 3 charactors", "comment")
+            flash("Minimum 3 charactors!", "comment")
             is_valid = False
         return is_valid 
 

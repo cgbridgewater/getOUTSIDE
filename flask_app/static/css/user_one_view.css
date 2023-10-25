@@ -86,11 +86,15 @@ h4{
 }
 
 .table {
-    margin-bottom: 15%;
+    margin:auto
 }
 
 tr {
     vertical-align:middle;
+}
+
+td {
+    border: none;
 }
 
 .flex2 {
@@ -112,7 +116,6 @@ tr {
     box-shadow: 5px 8px 10px rgba(2, 20, 2, 0.5);
 }
 
-
 .activity_links {
     margin-left: 5%;
     height:200px;
@@ -121,63 +124,6 @@ tr {
     padding: 1%;
     background-color:#FFFFF5;
 }
-
-
-.btn {
-	width: 110px;
-    height: 30px;
-    padding: 2px 5px;
-    margin: 4px;
-	color: #FFFEF5;
-    font-family: sans-serif;
-    font-weight: 800;
-    font-size: 12px;
-    text-align: center;
-    text-decoration: none;
-	border-radius: 50px !important;
-    -webkit-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.5) inset;
-    -moz-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.5) inset;
-    box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.5) inset;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.follow {
-	background-color: green;
-}
-
-.follow:hover {
-	background-color: green;
-	opacity: 85%;
-}
-
-.unfollow {
-	background-color: brown;
-}
-
-.unfollow:hover {
-	background-color: brown;
-	opacity: 85%;
-}
-
-.btn:active {
-	-webkit-transform: scale(0.80);
-	-moz-transform: scale(0.80);
-	-ms-transform: scale(0.80);
-	-o-transform: scale(0.80);
-	transform: scale(0.80);
-	background-color: inherit;
-}
-
-
-
-
 
 body {
     min-height: 100vh;

@@ -183,17 +183,17 @@ def upload_image():
             image = request.files["image"]
             # check that file name is not empty
             if image.filename == '':
-                flash("Image must have a file name")
-                return redirect("/getoutside/athlete/update") 
+                flash("Image must have a file name", "image")
+                return redirect("/getoutside/myprofile/edit") 
             # # check if file size is allowed
             # if not allowed_image_filesize(request.cookies.get("filesize")):
-            #     flash("File exceeded maximum size")
-            #     return redirect("/getoutside/athlete/update")
+            #     flash("File exceeded maximum size", "image")
+            #     return redirect("/getoutside/myprofile/edit")
 
             # check for allowed file extension type
             if not allowed_image(image.filename):
-                flash("That image extension is not allowed")
-                return redirect("/getoutside/athlete/update") 
+                flash("That image extension is not allowed", "image")
+                return redirect("/getoutside/myprofile/edit") 
             # sanitize image
             else:
                 filename = secure_filename(image.filename)
@@ -207,4 +207,4 @@ def upload_image():
             User.update_user_image(data)
             # return to profile page on success
             return redirect("/getoutside/myprofile") 
-    return redirect("/getoutside/athlete/update") 
+    return redirect("/getoutside/myprofile/edit") 

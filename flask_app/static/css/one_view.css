@@ -18,11 +18,11 @@
     margin-bottom: 1%;
 }
 
-.green {
+.text_green {
     color:green;
     font-weight: 700;
 }
-.green2 {
+.text_green2 {
     color:green;
     font-size:20px;
     font-weight: 700;
@@ -32,12 +32,6 @@
 
 .black {
     color:black;
-}
-
-.btn {
-    width: 85px;
-    font-size: 12px;
-    margin:2px;
 }
 
 .activity_container {
@@ -81,7 +75,7 @@
     justify-content: end;
     flex-wrap: wrap;
     margin-left: 10px;
-    width: 200px;
+    width: 220px;
 }
 
 .activity_links {
@@ -125,7 +119,8 @@ iframe {
 
 .input {
     width: 50%;
-    color: green;
+    color: brown;
+    font-weight: bold;
     border: 1px solid green;
     padding-left: 5px;
 }
@@ -135,9 +130,9 @@ iframe {
 }
 
 .error {
+    font-size: 14px;
     color:red;
     font-weight: 800;
-    
 }
 
 .comment_text {

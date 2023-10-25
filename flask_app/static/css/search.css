@@ -43,18 +43,21 @@ h1 {
     font-weight: 700;
 	text-transform: uppercase;
 	margin-left: 32px;
+	padding-left: 10px;
+	height: 32px;
 }
 
 .filter-post {
 	display: flex;
+	align-items: center;
 }
 
 .x-out{
 	color: brown;
-	font-size: 18px;
+	/* font-size: 18px; */
 	position: relative;
-	top: 2.5px;
-	right: 32px;
+	/* top: 0.5px; */
+	right: 29.5px;
 }
 
 .x-out:hover {
@@ -86,16 +89,17 @@ h1 {
 
 tr {
 	background-color: honeydew;
-    /* opacity: 85%; */
-}
-
-td {
-	padding: 0 0 0 15px;
+    opacity: 85%;
 }
 
 .text {
 	color: green;
 	font-size: 22px;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
 }
 
 .text:link, .text:visited,.text:hover {
@@ -111,53 +115,3 @@ td {
     -webkit-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
 }
-
-
-.btn {
-	width: 110px;
-    padding: 2px 5px;
-    margin: 4px;
-	color: #FFFEF5;
-    font-family: sans-serif;
-    font-weight: 800;
-    font-size: 12px;
-    text-align: center;
-    text-decoration: none;
-	border-radius: 50px !important;
-    -webkit-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.5) inset;
-    -moz-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.5) inset;
-    box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.5) inset;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-}
-
-
-.follow {
-	background-color: green;
-}
-
-.follow:hover {
-	background-color: green;
-	opacity: 85%;
-}
-
-.unfollow {
-	background-color: brown;
-}
-
-.unfollow:hover {
-	background-color: brown;
-	opacity: 85%;
-}
-
-.btn:active {
-	-webkit-transform: scale(0.80);
-	-moz-transform: scale(0.80);
-	-ms-transform: scale(0.80);
-	-o-transform: scale(0.80);
-	transform: scale(0.80);
-	background-color: inherit;
-}
-

@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{user.first_name.capitalize()}}'s Info</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/menu.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/page_header.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/buttons.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/user_one_view.css') }}">
@@ -15,9 +17,9 @@
     <!-- main wrapper -->
     <main>
         <!-- logo bar -->
-        <div>
-            <img class="logo" src="https://live.staticflickr.com/65535/52792585959_75b5df6be8_h.jpg" alt="getOUTSIDE">
-        </div>
+        <header>
+            <h1 class="header_text">Get OUTSIDE</h1>
+        </header>
         <!-- hamburger nav -->
         <div class="hamburger-menu">
             <input id="menu__toggle" type="checkbox" />
@@ -44,23 +46,24 @@
             </div>
             <!-- end user image/name box -->
             <!-- User Data -->
-                <div class="profile_info">  
-
-                    <div class="flex2">
-                        <h2 class="user">User Info</h2>
-                        {% set ns = namespace(counter =0) %}
-                        {% for follow in followers%}
-                        {% if follow.friend.id == user.id %}
-                        <!-- increase counter when match found -->
-                        {% set ns.counter = ns.counter +1 %}
-                        {% endif%}
-                        {% endfor %}
-                        {% if ns.counter == 0 %}
-                        <a class="btn follow" href="/getoutside/athlete/{{user.id}}/followbyid" role="button">FOLLOW</a>
-                        {% else %}
-                        <a class="btn unfollow" href="/getoutside/athlete/{{user.id}}/unfollowbyid" role="button">UNFOLLOW</a>
-                        {% endif%}
-                    </div>
+            <div class="profile_info">  
+                <!-- profile title / follow -->
+                <div class="flex2">
+                    <h2 class="user">User Info</h2>
+                    {% set ns = namespace(counter =0) %}
+                    {% for follow in followers%}
+                    {% if follow.friend.id == user.id %}
+                    <!-- increase counter when match found -->
+                    {% set ns.counter = ns.counter +1 %}
+                    {% endif%}
+                    {% endfor %}
+                    {% if ns.counter == 0 %}
+                    <a class="button green" href="/getoutside/athlete/{{user.id}}/followbyid" role="button">FOLLOW</a>
+                    {% else %}
+                    <a class="button brown" href="/getoutside/athlete/{{user.id}}/unfollowbyid" role="button">UNFOLLOW</a>
+                    {% endif%}
+                </div>
+                <!-- profile table -->
                 <table class="table">
                     <tbody>
                         <!-- declare events counter -->
@@ -77,6 +80,10 @@
                         <tr>
                             <td><h4>Member Since:</h4></td>
                             <td><h4 class="text-end">{{ user.created_at.strftime("%B %e, %Y") }}</h4></td>
+                        </tr>
+                        <tr>
+                            <td><h4>Badges:</h4></td>
+                            <td><p class="text-end">coming soon!</p></td>
                         </tr>
                     </tbody>
                 </table>

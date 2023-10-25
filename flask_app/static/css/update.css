@@ -28,7 +28,7 @@ body {
     width: 40%;
     min-width:375px;
     margin: 3% auto;
-    padding: 2%;
+    padding: 10px;
     border: 3px solid green;
     border-radius: 5px;
     background-color: honeydew;
@@ -48,20 +48,28 @@ label {
     font-size: 18px;
 }
 
-input {
+.input {
     background-color: #FFFFF5;
     border: 2px solid green;
-    color: green;
+    border-radius: 5px;
+    color: brown;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+.input2 {
+    background-color: #FFFFF5;
+    border: 2px solid green;
+    border-radius: 5px;
+    color: brown;
+    font-weight: bold;
+
 }
 
 .button_control {
     display: flex;
     justify-content: space-evenly;
-    margin: 0 auto;
-}
-
-.btn {
-    width: 118px;
+    margin: 10px auto 0;
 }
 
 .flex_center {

@@ -1,0 +1,176 @@
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	width: 100px !important;
+    height:30px;
+    padding: 2px 5px;
+    margin: 4px;
+	color: #FFFEF5;
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    text-decoration: none;
+    border: none;
+	border-radius: 50px !important;
+    -webkit-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.5) inset;
+    -moz-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.5) inset;
+    box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.5) inset;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.button:active {
+	-webkit-transform: scale(0.80);
+	-moz-transform: scale(0.80);
+	-ms-transform: scale(0.80);
+	-o-transform: scale(0.80);
+	transform: scale(0.80);
+	background-color: inherit;
+    position: relative;
+    top:5px;
+}
+
+/* create button */
+.create_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	width: 200px !important;
+    height:30px;
+    /* padding: 2px 5px; */
+    /* margin: 4px; */
+	color: #FFFEF5;
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    text-decoration: none;
+    border: none;
+	border-radius: 50px !important;
+    -webkit-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.5) inset;
+    -moz-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.5) inset;
+    box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.5) inset;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.create_button:active {
+	-webkit-transform: scale(0.80);
+	-moz-transform: scale(0.80);
+	-ms-transform: scale(0.80);
+	-o-transform: scale(0.80);
+	transform: scale(0.80);
+	background-color: inherit;
+    position: relative;
+    top:5px;
+}
+
+/* Button Colors */
+.green {
+	background-color: green;
+}
+
+.green:hover {
+	background-color: green;
+	opacity: 85%;
+    color: #fff99f;
+}
+
+.brown {
+    background-color: brown;
+}
+
+.brown:hover {
+    background-color: brown;
+	opacity: 85%;
+    color: #fff99f;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.blue:hover {
+    background-color: blue;
+	opacity: 85%;
+    color: #fff99f;
+}
+
+.grey {
+    background-color: gray;
+}
+
+.grey:hover {
+    background-color: grey;
+	opacity: 85%;
+    color: #fff99f;
+}
+
+.close {
+    position: relative;
+
+}
+
+.button_close {
+    position: relative;
+    bottom: 5px;
+    left: 15px;
+    color: brown;
+}
+
+.button_close:hover {
+    color: red;
+}
+
+
+/* Activities Actions */
+
+.unjoin_button {
+    position: relative;
+    top: 15px;
+    color: brown;
+}
+
+.unjoin_button:hover {
+    color: red;
+}
+
+.unjoin_button:active {
+    position: relative;
+    top: 18px;
+}
+
+.join_button {
+    position: relative;
+    top: 15px;
+    color: green;
+}
+
+.join_button:hover {
+    color: darkgreen;
+}
+
+.join_button:active {
+    position: relative;
+    top: 18px;
+}
+
+.edit_button {
+    position: relative;
+    top: 15px;
+    color: blue;
+}
+
+.edit_button:hover {
+    color: darkblue;
+}
+
+.edit_button:active {
+    position: relative;
+    top: 18px;
+}
