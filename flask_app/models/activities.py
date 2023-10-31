@@ -170,6 +170,41 @@ class Activity:
         return all_activities
 
 
+    ### GET ALL ACTIVITIES AND ATTENDEES (usersController)
+    @classmethod
+    def get_all_activities_with_attendees(cls):
+        query = """
+        SELECT * FROM users AS creator
+        JOIN activities ON creator.id = activities.user_id
+        LEFT JOIN join_activity ON activities.id = activity_id;
+        """
+        results = connectToMySQL('test_app').query_db(query)
+        pprint("TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST \n TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST")
+        pprint(results)
+        all_activities = []
+        for row in results:
+            one_activity = cls({
+                "id": row['activities.id'],
+                "activity" : row['activity'],
+                "location" : row['location'],
+                "date" : row['date'],    
+                "created_at" : row['activities.created_at'],
+                "updated_at" : row['activities.updated_at'],
+            })
+            one_activity.creator = users.User({
+                "id": row['user_id'],
+                "first_name": row['first_name'],
+                "last_name": row['last_name'],
+                "image_file": row['image_file'],
+                "email": row['email'],
+                "password": row['password'],
+                "created_at": row['created_at'],
+                "updated_at": row['updated_at'],
+            })
+            all_activities.append(one_activity)
+        return all_activities
+
+
     ### GET ALL ACTIVITIES WITH CREATOR (usersController)
     @classmethod
     def get_all_activities(cls):
@@ -181,7 +216,7 @@ class Activity:
             WHERE date > DATE_SUB(CURDATE(), INTERVAL 1 DAY) ORDER BY date ASC;
         """
         results = connectToMySQL('test_app').query_db(query)
-        pprint(results)
+        # pprint(results)
         all_activities = []
         for row in results:
             one_activity = cls(row)
@@ -239,7 +274,7 @@ class Activity:
             WHERE join_activity.activity_id =  %(id)s;
         """
         results = connectToMySQL("test_app").query_db(query, data)
-        pprint(results)
+        # pprint(results)
         all_attendees = [] 
         for row in results:
             one_attendee = (row)
@@ -265,8 +300,7 @@ class Activity:
             WHERE join_activity.user_id =  %(id)s;
         """
         results = connectToMySQL("test_app").query_db(query, data)
-        pprint("HERHERHERHEHREHREHRHERHEHRHEHERHERHERHEHHERHHERHERHERHEHREHREHRHERHEHRHEHERHERHERHEHHERH CHECK HERE!!")
-        pprint(results)
+        # pprint(results)
         all_attendees = [] 
         for row in results:
             one_attendee = (row)

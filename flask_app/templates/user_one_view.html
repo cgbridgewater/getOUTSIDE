@@ -82,8 +82,66 @@
                             <td><h4 class="text-end">{{ user.created_at.strftime("%B %e, %Y") }}</h4></td>
                         </tr>
                         <tr>
-                            <td><h4>Badges:</h4></td>
-                            <td><p class="text-end">coming soon!</p></td>
+                            <td><h4>My Badges:</h4></td>
+                            <td><h4 class="text-end me-4">
+                            <!-- counter for joined activities -->
+                            {% set nsjoined = namespace(joined =0) %}
+                            {% for join in joined %}
+                                {% set nsjoined.joined = nsjoined.joined +1 %}
+                            {% endfor %}
+                            
+                                <!-- counter for friends made -->
+                            {% set nsfriends = namespace(friends = 0) %}
+                            {% for follower in followers %}
+                                {% set nsfriends.friends = nsfriends.friends +1 %}
+                            {% endfor %}
+                            
+                            <!-- sign up badge -->
+                            <img class="badges" src="/static/images/badges/signedup.png" alt="sign up badge">
+                            <!-- upload image badge -->
+                            {% if user.image_file != "default.png" %}
+                                <img class="badges" src="/static/images/badges/profile_badge.png" alt="profile pic badge">
+                            {% endif %}
+                            <!-- friends badge -->
+                            {% if nsfriends.friends > 0 %}
+                            <img class="badges" src="/static/images/badges/friends.png" alt="friends made">
+                            {% endif %}
+
+                            <!-- activities created badges -->
+                            {% if ns.events > 0 and ns.events < 5 %}
+                            <img class="badges" src="/static/images/badges/1activities.png" alt="events created badge">
+                            {% endif %}
+                            {% if ns.events >= 5 and ns.events < 10 %}
+                            <img class="badges" src="/static/images/badges/5activities.png" alt="events created badge">
+                            {% endif %}
+                            {% if ns.events >= 10 and ns.events < 25 %}
+                            <img class="badges" src="/static/images/badges/10activities.png" alt="events created badge">
+                            {% endif %}
+                            {% if ns.events >= 25 and ns.events < 50 %}
+                            <img class="badges" src="/static/images/badges/25activities.png" alt="events created badge">
+                            {% endif %}
+                            {% if ns.events >= 50 and ns.events < 100 %}
+                            <img class="badges" src="/static/images/badges/50activities.png" alt="events created badge">
+                            {% endif %}
+                            
+                            <!-- activities joined badges -->
+                            {% if nsjoined.joined > 0 and nsjoined.joined < 5 %}
+                            <img class="badges" src="/static/images/badges/1joined.png" alt="activities joined badge"> 
+                            {% endif %}
+                            {% if nsjoined.joined >= 5 and nsjoined.joined < 10 %}
+                            <img class="badges" src="/static/images/badges/5joined.png" alt="activities joined badge"> 
+                            {% endif %}
+                            {% if nsjoined.joined >= 10 and nsjoined.joined < 25 %}
+                            <img class="badges" src="/static/images/badges/10joined.png" alt="activities joined badge"> 
+                            {% endif %}
+                            {% if nsjoined.joined >= 25 and nsjoined.joined < 50 %}
+                            <img class="badges" src="/static/images/badges/25joined.png" alt="activities joined badge"> 
+                            {% endif %}
+                            {% if nsjoined.joined >= 50 and nsjoined.joined < 100 %}
+                            <img class="badges" src="/static/images/badges/50joined.png" alt="activities joined badge"> 
+                            {% endif %}
+    
+                            </h4></td>
                         </tr>
                     </tbody>
                 </table>

@@ -16,7 +16,7 @@ def user_dashboard():
     data ={
         'id': session['user_id']
     }
-    return render_template("user_profile.html", user = User.get_user_by_id(data), activities = Activity.get_all_activities(), joined = Activity.get_all_activities_and_attendees(data), followers = User.all_followers(data), counts = Activity.get_all_activities_by_user_id(data))
+    return render_template("user_profile.html", user = User.get_user_by_id(data), activities = Activity.get_all_activities(), joined = Activity.get_all_activities_and_attendees(data), followers = User.all_followers(data), counts = Activity.get_all_activities_by_user_id(data), all_joined = Activity.get_all_events_attending_by_user_with_id(data))
 
 
 ### UPDATE ATHLETE FORM (protected)
@@ -79,7 +79,7 @@ def get_user_by_id(id):
     logged_user ={
         'id': session['user_id']
     }
-    return render_template("user_one_view.html", user = User.get_user_by_id(data), activities = Activity.get_all_activities(), followers = User.all_followers(logged_user), counts = Activity.get_all_activities_by_user_id(data))
+    return render_template("user_one_view.html", user = User.get_user_by_id(data), activities = Activity.get_all_activities(), joined = Activity.get_all_events_attending_by_user_with_id(data), followers = User.all_followers(logged_user), counts = Activity.get_all_activities_by_user_id(data))
 
 
 ### FOLLOW FRIEND /RETURN TO FRIEND SEARCH
