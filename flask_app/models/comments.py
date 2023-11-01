@@ -53,3 +53,25 @@ class Comment:
             })
             all_comments.append(one_comment)
         return all_comments
+
+
+### GET ALL COMMENTS
+    @classmethod
+    def get_all_comments(cls):
+        query = """
+            SELECT * FROM comments;
+        """
+        result = connectToMySQL("test_app").query_db(query)
+        pprint(result)
+        all_comments = []
+        for row in result:
+            one_comment = cls({
+                "id": row['id'],
+                "activity_id": row['activity_id'],
+                "commenter" : row['commenter'],
+                "text" : row['text'],
+                "created_at" : row['created_at'],
+                "updated_at" : row['updated_at'],
+            })
+            all_comments.append(one_comment)
+        return all_comments

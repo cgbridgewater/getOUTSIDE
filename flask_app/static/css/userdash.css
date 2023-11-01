@@ -110,7 +110,17 @@ ul {
 h4{
     color:green;
     font-weight: 700;
+    font-size: 24px;
 }
+
+@media (max-width:1200px) {
+    h4{
+        font-size: 18px;
+        transition:  0.5s;
+    }
+}
+
+
 
 h5 {
     margin: 0;
@@ -180,7 +190,7 @@ td {
 
 .friend_list_container {
     margin: 1% 0;
-    padding:1%;
+    padding: 5px 10px;
     width: 20%;
     min-width: 350px;
     background-color: honeydew;
@@ -197,8 +207,9 @@ td {
     height:273px;
     overflow-y:scroll;
     overflow-x: hidden;
-    padding: 1%;
+    padding: 0px 10px;
     background-color:#FFFFF5;
+    border: 0.5px solid rgba(0,128,0,0.4);
 }
 
 .friend_list {
@@ -206,7 +217,6 @@ td {
     justify-content: space-between;
     align-items: center;
     margin: 0;
-    padding: 0;
 }
 
 .unfollow {
@@ -225,7 +235,7 @@ td {
 
 .spacer {
     width: 80%;
-    margin:1% auto;
+    margin:7px auto;
     border: 5px solid green;
     border-radius: 20%;
 }
@@ -249,11 +259,11 @@ td {
 }
 
 .friend_left, .friend_right {
-    margin: 1% 0;
+    margin: 5px 0;
     width: 45%;
     min-width: 350px;
     min-height: 150px;
-    padding: 1%;
+    padding: 5px 10px 15px 10px;
     background-color: honeydew;
     opacity: 85%;
     border: 3px solid green;
@@ -266,13 +276,15 @@ td {
     height:200px;
     overflow-y:scroll;
     overflow-x: hidden;
-    padding: 1%;
+    padding: 0px 10px ;
     background-color:#FFFFF5;
+    border: 0.5px solid rgba(0,128,0,0.4);
 }
 
 .link {
     text-decoration: none;
     color:#857659;
+    margin: 5px 5px;
 }
 
 .link:hover {
@@ -295,6 +307,10 @@ td {
 .badges {
     height: 45px;
     width: 45px;
+}
+
+.badge_wrap {
+    word-break: break-word;
 }
 
 body {

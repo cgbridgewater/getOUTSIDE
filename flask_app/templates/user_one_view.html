@@ -90,57 +90,89 @@
                                 {% set nsjoined.joined = nsjoined.joined +1 %}
                             {% endfor %}
                             
-                                <!-- counter for friends made -->
+                            <!-- counter for friends made -->
                             {% set nsfriends = namespace(friends = 0) %}
                             {% for follower in followers %}
                                 {% set nsfriends.friends = nsfriends.friends +1 %}
                             {% endfor %}
-                            
+
+                            <!-- counter for comments made -->
+                            {% set nscomments = namespace(comment = 0) %}
+                            {% for comment in comments %}
+                                {% if comment.commenter.upper() == user.first_name.upper() +" " + user.last_name.upper() %}
+                                    {% set nscomments.comment = nscomments.comment +1 %}
+                                {% endif %}
+                            {% endfor %}
+
                             <!-- sign up badge -->
                             <img class="badges" src="/static/images/badges/signedup.png" alt="sign up badge">
+
                             <!-- upload image badge -->
                             {% if user.image_file != "default.png" %}
                                 <img class="badges" src="/static/images/badges/profile_badge.png" alt="profile pic badge">
+                            {% else %}
+                                <img class="badges" src="/static/images/badges/empty.png" alt="empty badge"> 
                             {% endif %}
+
                             <!-- friends badge -->
                             {% if nsfriends.friends > 0 %}
-                            <img class="badges" src="/static/images/badges/friends.png" alt="friends made">
+                                <img class="badges" src="/static/images/badges/friends.png" alt="friends made">
+                            {% else %}
+                                <img class="badges" src="/static/images/badges/empty.png" alt="empty badge"> 
                             {% endif %}
+
+                            <br>
 
                             <!-- activities created badges -->
                             {% if ns.events > 0 and ns.events < 5 %}
                             <img class="badges" src="/static/images/badges/1activities.png" alt="events created badge">
-                            {% endif %}
-                            {% if ns.events >= 5 and ns.events < 10 %}
+                            {% elif ns.events >= 5 and ns.events < 10 %}
                             <img class="badges" src="/static/images/badges/5activities.png" alt="events created badge">
-                            {% endif %}
-                            {% if ns.events >= 10 and ns.events < 25 %}
+                            {% elif ns.events >= 10 and ns.events < 25 %}
                             <img class="badges" src="/static/images/badges/10activities.png" alt="events created badge">
-                            {% endif %}
-                            {% if ns.events >= 25 and ns.events < 50 %}
+                            {% elif ns.events >= 25 and ns.events < 50 %}
                             <img class="badges" src="/static/images/badges/25activities.png" alt="events created badge">
-                            {% endif %}
-                            {% if ns.events >= 50 and ns.events < 100 %}
+                            {% elif ns.events >= 50 and ns.events < 100 %}
                             <img class="badges" src="/static/images/badges/50activities.png" alt="events created badge">
+                            {% elif ns.events >= 100 %}
+                            <img class="badges" src="/static/images/badges/100activities.png" alt="events created badge">
+                            {% else %}
+                            <img class="badges" src="/static/images/badges/empty.png" alt="empty badge"> 
                             {% endif %}
-                            
+
                             <!-- activities joined badges -->
                             {% if nsjoined.joined > 0 and nsjoined.joined < 5 %}
                             <img class="badges" src="/static/images/badges/1joined.png" alt="activities joined badge"> 
-                            {% endif %}
-                            {% if nsjoined.joined >= 5 and nsjoined.joined < 10 %}
+                            {% elif nsjoined.joined >= 5 and nsjoined.joined < 10 %}
                             <img class="badges" src="/static/images/badges/5joined.png" alt="activities joined badge"> 
-                            {% endif %}
-                            {% if nsjoined.joined >= 10 and nsjoined.joined < 25 %}
+                            {% elif nsjoined.joined >= 10 and nsjoined.joined < 25 %}
                             <img class="badges" src="/static/images/badges/10joined.png" alt="activities joined badge"> 
-                            {% endif %}
-                            {% if nsjoined.joined >= 25 and nsjoined.joined < 50 %}
+                            {% elif nsjoined.joined >= 25 and nsjoined.joined < 50 %}
                             <img class="badges" src="/static/images/badges/25joined.png" alt="activities joined badge"> 
-                            {% endif %}
-                            {% if nsjoined.joined >= 50 and nsjoined.joined < 100 %}
+                            {% elif nsjoined.joined >= 50 and nsjoined.joined < 100 %}
                             <img class="badges" src="/static/images/badges/50joined.png" alt="activities joined badge"> 
+                            {% elif nsjoined.joined >= 100 %}
+                            <img class="badges" src="/static/images/badges/100joined.png" alt="activities joined badge"> 
+                            {% else %}
+                            <img class="badges" src="/static/images/badges/empty.png" alt="empty badge"> 
                             {% endif %}
-    
+
+                            {% if nscomments.comment >0 and nscomments.comment < 5 %}
+                            <img class="badges" src="/static/images/badges/1comments.png" alt="activities joined badge"> 
+                            {% elif nscomments.comment >= 5 and nscomments.comment < 10 %}
+                            <img class="badges" src="/static/images/badges/5comments.png" alt="activities joined badge"> 
+                            {% elif nscomments.comment >= 10 and nscomments.comment < 25 %}
+                            <img class="badges" src="/static/images/badges/10comments.png" alt="activities joined badge"> 
+                            {% elif nscomments.comment >= 25 and nscomments.comment < 50 %}
+                            <img class="badges" src="/static/images/badges/25comments.png" alt="activities joined badge"> 
+                            {% elif nscomments.comment >= 50 and nscomments.comment < 100 %}
+                            <img class="badges" src="/static/images/badges/50comments.png" alt="activities joined badge"> 
+                            {% elif nscomments.comment >= 100 %}
+                            <img class="badges" src="/static/images/badges/100comments.png" alt="activities joined badge"> 
+                            {% else %}
+                            <img class="badges" src="/static/images/badges/empty.png" alt="empty badge"> 
+                            {% endif %}
+
                             </h4></td>
                         </tr>
                     </tbody>

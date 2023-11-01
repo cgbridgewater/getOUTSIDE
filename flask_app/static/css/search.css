@@ -97,6 +97,11 @@ tr {
 	font-size: 22px;
 }
 
+.title {
+	color: green;
+	font-size: 22px;
+}
+
 .center {
 	display: flex;
 	justify-content: center;

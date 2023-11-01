@@ -24,14 +24,14 @@
 }
 
 .button:active {
-	-webkit-transform: scale(0.80);
-	-moz-transform: scale(0.80);
-	-ms-transform: scale(0.80);
-	-o-transform: scale(0.80);
-	transform: scale(0.80);
+	-webkit-transform: scale(0.85);
+	-moz-transform: scale(0.85);
+	-ms-transform: scale(0.85);
+	-o-transform: scale(0.85);
+	transform: scale(0.85);
 	background-color: inherit;
     position: relative;
-    top:5px;
+    top:3px;
 }
 
 /* create button */
@@ -58,14 +58,14 @@
 }
 
 .create_button:active {
-	-webkit-transform: scale(0.80);
-	-moz-transform: scale(0.80);
-	-ms-transform: scale(0.80);
-	-o-transform: scale(0.80);
-	transform: scale(0.80);
+	-webkit-transform: scale(0.85);
+	-moz-transform: scale(0.85);
+	-ms-transform: scale(0.85);
+	-o-transform: scale(0.85);
+	transform: scale(0.85);
 	background-color: inherit;
     position: relative;
-    top:5px;
+    top:3px;
 }
 
 /* Button Colors */
@@ -153,7 +153,23 @@
 
 .unjoin_button:active {
     position: relative;
-    top: 18px;
+    top: 17px;
+}
+
+.unjoin2_button {
+    position: relative;
+    top: 15px;
+    color: brown;
+}
+
+.unjoin2_button:hover {
+    color: red;
+    text-shadow:  0.2rem 0.2rem .5rem rgba(0, 0, 0, 0.5);
+}
+
+.unjoin2_button:active {
+    position: relative;
+    top: 3px;
 }
 
 .join_button {
@@ -169,7 +185,7 @@
 
 .join_button:active {
     position: relative;
-    top: 18px;
+    top: 17px;
 }
 
 .edit_button {
@@ -185,5 +201,5 @@
 
 .edit_button:active {
     position: relative;
-    top: 18px;
+    top: 17px;
 }
