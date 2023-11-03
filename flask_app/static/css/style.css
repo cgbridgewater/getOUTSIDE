@@ -57,10 +57,29 @@ input.input:focus {
     display: flex;
     justify-content: center;
     margin: 20px 0 20px 0;
+    opacity: 85%;
 }
 
+.sign_in {
+    text-align: end;
+    margin:0;
+    color: green;
+    font-weight: 700;
+}
+
+.sign_in_link {
+    /* text-decoration: none; */
+    color: brown;
+}
+
+.sign_in_link:hover {
+    color: darkred;
+    text-shadow: 1px 2px 8px green;
+}
+
+
 .login,.register {
-    padding: 10px 15px 0 15px;
+    padding: 10px 15px 5px 15px;
     border: 3px solid green;
     border-radius: 10px;
     background-color: #fffef5;
