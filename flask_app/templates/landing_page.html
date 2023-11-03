@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>getOUTSIDE</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../static/favicon/site.webmanifest">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/landing_page.css') }}">
@@ -116,7 +122,8 @@
                                     {% else %}
                                     <label for="confirm_password" class="text-sm-start">Confirm Password:</label>
                                     {% endif %}
-                                {% endwith %}                        </div>
+                                {% endwith %}
+                            </div>
                             <div>
                                 <input type="password" id="confirm_password" name="confirm_password" class="input form-control bg-light">
                             </div>
@@ -128,7 +135,7 @@
                         </form>
                         <!--form END -->
                     </div>
-                    <p class="sign_in">Already a member? <a href="/getoutside/tologin">Log In!</a></p>
+                    <p class="sign_in">Already a member? <a class="sign_in_link" href="/getoutside/tologin">Log In!</a></p>
                 </div>
                 <!-- end register container -->
 
@@ -141,12 +148,12 @@
                     <h3 class="title">All problems of the past!</h3>
                     <h5 class="text-center">when you sign up with <span class="outside">Get OUTSIDE</span></h5>
                     <ul>
-                        <li>Customize Profile Images</li>
-                        <li>Create and host activities</li>
-                        <li>Find and follow friends</li>
-                        <li>Join onto friends activities</li>
-                        <li>Comment on the activities</li>
-                        <li>Earn Badges</li>
+                        <li class="list">Customize Profile Images</li>
+                        <li class="list">Create and host activities</li>
+                        <li class="list">Find and follow friends</li>
+                        <li class="list">Join onto friends activities</li>
+                        <li class="list">Comment on the activities</li>
+                        <li class="list">Earn Badges</li>
                     </ul>
                     <ul class="slideshow">
                         <li><span></span></li>
