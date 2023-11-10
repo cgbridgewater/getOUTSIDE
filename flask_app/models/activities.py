@@ -2,7 +2,6 @@ from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app.models import users
 from flask import flash
 import datetime
-from pprint import pprint
 
 
 ### ACTIVITY CLASS
@@ -70,7 +69,6 @@ class Activity:
             WHERE user_id = %(id)s;
         """
         results = connectToMySQL('test_app').query_db(query,data)
-        pprint(results)
         activities = []
         for events in results:
             activities.append( cls(events) )
@@ -120,7 +118,6 @@ class Activity:
             LEFT JOIN users AS creator ON activities.user_id = creator.id
             WHERE activities.id = %(id)s;"""
         result = connectToMySQL('test_app').query_db(query,data)
-        pprint(result)
         one_activity = cls(result[0])
         one_activity.creator = users.User({
             "id": result[0]['creator.id'],
@@ -145,7 +142,6 @@ class Activity:
         WHERE date > DATE_SUB(CURDATE(), INTERVAL 1 DAY) AND join_activity.user_id = %(id)s AND creator.id != %(id)s ORDER BY date ASC;
         """
         results = connectToMySQL('test_app').query_db(query, data)
-        pprint(results)
         all_activities = []
         for row in results:
             one_activity = cls({
@@ -179,8 +175,6 @@ class Activity:
         LEFT JOIN join_activity ON activities.id = activity_id;
         """
         results = connectToMySQL('test_app').query_db(query)
-        pprint("TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST \n TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST")
-        pprint(results)
         all_activities = []
         for row in results:
             one_activity = cls({
@@ -216,7 +210,6 @@ class Activity:
             WHERE date > DATE_SUB(CURDATE(), INTERVAL 1 DAY) ORDER BY date ASC;
         """
         results = connectToMySQL('test_app').query_db(query)
-        # pprint(results)
         all_activities = []
         for row in results:
             one_activity = cls(row)
@@ -274,7 +267,6 @@ class Activity:
             WHERE join_activity.activity_id =  %(id)s;
         """
         results = connectToMySQL("test_app").query_db(query, data)
-        # pprint(results)
         all_attendees = [] 
         for row in results:
             one_attendee = (row)
@@ -300,7 +292,6 @@ class Activity:
             WHERE join_activity.user_id =  %(id)s;
         """
         results = connectToMySQL("test_app").query_db(query, data)
-        # pprint(results)
         all_attendees = [] 
         for row in results:
             one_attendee = (row)

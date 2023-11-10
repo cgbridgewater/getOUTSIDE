@@ -2,7 +2,6 @@ from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
 from flask_app.models import activities
 import re
-from pprint import pprint
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$') 
 
 
@@ -112,8 +111,6 @@ class User:
         WHERE activities.user_id = %(id)s;
         """
         results = connectToMySQL('test_app').query_db(query,data)
-        pprint("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-        pprint(results)
         one_user = cls(results[0])
         for row in results:
                 activity =  ({
@@ -212,7 +209,6 @@ class User:
             ORDER BY friends_made.first_name
         """
         results = connectToMySQL('test_app').query_db(query,data)
-        pprint(results)
         user_and_friends = []
         for row in results:
             user = cls(row)

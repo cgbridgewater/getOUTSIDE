@@ -1,7 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
 import datetime
-from pprint import pprint
 
 ### COMMMENT CLASS
 class Comment:
@@ -40,7 +39,6 @@ class Comment:
             SELECT * FROM comments WHERE activity_id = %(id)s;
         """
         result = connectToMySQL("test_app").query_db(query,data)
-        pprint(result)
         all_comments = []
         for row in result:
             one_comment = cls({
@@ -62,7 +60,6 @@ class Comment:
             SELECT * FROM comments;
         """
         result = connectToMySQL("test_app").query_db(query)
-        pprint(result)
         all_comments = []
         for row in result:
             one_comment = cls({

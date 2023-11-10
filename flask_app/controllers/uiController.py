@@ -41,7 +41,6 @@ def register():
         session["email"] = request.form["email"]
         return redirect('/getoutside/')
     pw_hash = bcrypt.generate_password_hash(request.form['password'])
-    print(pw_hash) 
     data = {
         "first_name": request.form['first_name'],
         "last_name" : request.form['last_name'],
