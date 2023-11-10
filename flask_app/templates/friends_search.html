@@ -9,7 +9,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../static/favicon/site.webmanifest">
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/menu.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/search.css') }}">
@@ -40,8 +39,8 @@
         </div>
         <!-- end hamburger nav -->
         <!-- INPUT SECTION -->
-        <h1>Find friends to Get Outside!</h1>
         <div class="formContainer">
+            <h1 class="friend_search_title">Find Friends</h1>
             <div class="filter-post" >
                 <input type="text" class="filter" id="filter" placeholder="Type Name..." onkeyup="searchUser()" autofocus />
                 <a class="x-out" onClick="window.location.reload();" >
@@ -73,11 +72,11 @@
                     <!-- display based on matches found -->
                     <!-- no matches -->
                     {% if ns.counter == 0 %}
-                        <td class="text-start ps-3" id="text-start"><a class="text" href="/getoutside/athlete/{{user.id}}">{{user.first_name.capitalize()}} {{user.last_name.capitalize()}} </a></td>
+                        <td class="text-start ps-3" id="text-start"><a class="name text" href="/getoutside/athlete/{{user.id}}">{{user.first_name.capitalize()}} {{user.last_name.capitalize()}} </a></td>
                         <td class="center"><a class="button green" href="/getoutside/athlete/{{user.id}}/follow">FOLLOW</a></td>
                     <!-- matches -->
                     {% else %}
-                        <td class="text-start ps-3" id="text-start"><a class="text" href="/getoutside/athlete/{{user.id}}">{{user.first_name.capitalize()}} {{user.last_name.capitalize()}} </a></td>
+                        <td class="text-start ps-3" id="text-start"><a class="name text" href="/getoutside/athlete/{{user.id}}">{{user.first_name.capitalize()}} {{user.last_name.capitalize()}} </a></td>
                         <td class="center"><a class="button brown" href="/getoutside/athlete/{{user.id}}/unfollow">UNFOLLOW</a></td>
                     {% endif%}
                 {% endfor %}

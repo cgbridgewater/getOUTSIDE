@@ -10,7 +10,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../static/favicon/site.webmanifest">
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/menu.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/page_header.css') }}">
@@ -85,7 +84,7 @@
                         </tr>
                         <tr>
                             <td><h4>Member Since:</h4></td>
-                            <td><h4 class="text-end">{{ user.created_at.strftime("%B %e, %Y") }}</h4></td>
+                            <td><h4 class="text-end">{{ user.created_at.strftime("%B %Y") }}</h4></td>
                         </tr>
                         <tr>
                             <td><h4>My Badges:</h4></td>

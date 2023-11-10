@@ -10,7 +10,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../static/favicon/site.webmanifest">
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/page_header.css') }}">
@@ -47,7 +46,7 @@
                         <label for="email">Email:</label>
                     </div>
                     <div>
-                        <input type="text" name="email" class="input my-2 form-control bg-light" value="{{session['email2']}}" autofocus>
+                        <input  autocomplete="email" type="text" name="email" class="input my-2 form-control bg-light" value="{{session['email2']}}" autofocus>
                     </div>
                     <!-- End Email Section -->
                     <!-- Password Section -->
@@ -55,7 +54,7 @@
                         <label for="password">Password:</label>
                     </div>
                     <div>
-                        <input type="password" name="password" class="input my-2 form-control bg-light">
+                        <input autocomplete="none" type="password" name="password" class="input my-2 form-control bg-light">
                     </div>
                     <!-- Password Section -->
                     <!-- submit -->
