@@ -1,7 +1,6 @@
 /* TOOL TIPS CSS */
 
 .tool-tip {
-    /* border: 1px solid #ccc; */
     font-size: 12px;
     padding: 2px 0px;
     position: relative;
@@ -16,7 +15,7 @@
     border-radius: 5px;
     color: green;
     content: attr(data-tooltip-title) " ";
-    font-weight: normal;
+    font-weight: 700;
     min-width: 100px;
     padding: 2px 0px;
     text-align: center;
@@ -76,17 +75,6 @@
 
 .tool-tip[data-tooltip-position="bottom"]::before {
     transform: translate3d(-50%, -10px, 0);
-}
-
-
-.tool-tip[data-tooltip-position="top"]::before {
-    border-top: 7px solid green;
-    bottom: calc(100% + 3px);
-}
-
-.tool-tip[data-tooltip-position="bottom"]::before {
-    border-bottom: 7px solid green;
-    top: calc(100% + 3px);
 }
 
 .tool-tip:hover::before,

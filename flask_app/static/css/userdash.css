@@ -309,9 +309,17 @@ td {
     width: 45px;
 }
 
+.badges:hover {
+    opacity: 85%;
+    filter: drop-shadow(5px 5px 5px rgba(0,128,0,0.85));
+    transition: opacity 250ms ease 0ms, transform 250ms ease 0ms;
+
+}
+
 .badge_wrap {
     word-break: break-word;
 }
+
 
 body {
     min-height: 100vh;
