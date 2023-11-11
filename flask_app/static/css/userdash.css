@@ -204,7 +204,8 @@ td {
 
 .friend_box {
     margin-left: 5%;
-    height:273px;
+    margin-top: -2px;
+    height:307px;
     overflow-y:scroll;
     overflow-x: hidden;
     padding: 0px 10px;
