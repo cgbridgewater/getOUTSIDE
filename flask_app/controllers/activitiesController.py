@@ -52,7 +52,7 @@ def new_activity_form_page_2():
     return render_template("activity_new_form_2.html")
 
 
-### NEW ACTIVITY POST ACTION 
+### NEW ACTIVITY POST ACTION RETURN TO NEW ACTIVITY CREATED
 @app.route('/getoutside/activities/new', methods=["POST"])
 def create_activity_form_action():
     if 'user_id' not in session:
@@ -63,47 +63,11 @@ def create_activity_form_action():
         session["location"] = request.form["location"]
         session["date"] = request.form["date"]
         return redirect('/getoutside/activities/new') 
-    Activity.create_activity_form_action(request.form)
+    new_activity_id = Activity.create_activity_form_action(request.form)
     session.pop("activity", None)
     session.pop("location", None)
     session.pop("date", None)
-    return redirect("/getoutside/activities") 
-
-
-### NEW ACTIVITY POST ACTION FROM ACTIVITIES PAGE
-@app.route('/getoutside/activities/new1', methods=["POST"])
-def create_activity_form_action1():
-    if 'user_id' not in session:
-        msg = "you must be logged in!"
-        return redirect('/logout')
-    if not Activity.activity_validation_check(request.form):
-        session["activity"] = request.form["activity"]
-        session["location"] = request.form["location"]
-        session["date"] = request.form["date"]
-        return redirect('/getoutside/activities/new') 
-    Activity.create_activity_form_action(request.form)
-    session.pop("activity", None)
-    session.pop("location", None)
-    session.pop("date", None)
-    return redirect("/getoutside/activities") 
-
-
-### NEW ACTIVITY POST ACTION FROM ACTIVITIES_2 PAGE
-@app.route('/getoutside/activities/new2', methods=["POST"])
-def create_activity_form_action2():
-    if 'user_id' not in session:
-        msg = "you must be logged in!"
-        return redirect('/logout')
-    if not Activity.activity_validation_check(request.form):
-        session["activity"] = request.form["activity"]
-        session["location"] = request.form["location"]
-        session["date"] = request.form["date"]
-        return redirect('/getoutside/activities/new2') 
-    Activity.create_activity_form_action(request.form)
-    session.pop("activity", None)
-    session.pop("location", None)
-    session.pop("date", None)
-    return redirect("/getoutside/activities") 
+    return redirect(f"/getoutside/activity/{new_activity_id}") 
 
 
 ### UPDATE ACTIVITY FORM (Protected)
