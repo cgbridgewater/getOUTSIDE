@@ -29,14 +29,15 @@
         </header>
         <!-- menu button -->
         <a class="menu_trigger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-            MENU
+            MENU &nbsp; <i class="fas fa-caret-square-down"></i>
         </a>
         <!-- end menu button -->
         <!-- menu popout -->
         <div class="offcanvas  offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <a class="menu_close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="button_menu_close fas fa-caret-square-down fa-rotate-90 fa-2xl"></i></a>
             <ul class="menu__box">
-                <li><a class="menu__item" href="/getoutside/myprofile">My Profile</a></li>
                 <li><a class="menu__item" href="/getoutside/activities">Activities</a></li>
+                <li><a class="menu__item" href="/getoutside/myprofile">My Profile</a></li>
                 <li><a class="menu__item" href="/getoutside/friends">Find Friends</a></li>
                 <li><a class="menu__item" href="/logout">Log Out</a></li>
             </ul>
@@ -65,15 +66,15 @@
                         </div>
                     </div>
                     <!-- activity deets -->
-                    <p class="text_green">What I'm Doing: <span class="black">
+                    <p class="text_green"><i class="fas fa-info-circle" style="color: #008000;"></i> What I'm Doing: <span class="black">
                         {% if activity.activity == "to the Gym"%}
                             Gym Session
                         {% else %}
                             {{activity.activity}}
                         {% endif %}
                     </span></p>
-                    <p class="text_green">When: <span class="black">{{activity.date.strftime("%B %e, %Y")}}</span></p>
-                    <p class="text_green">Where: <span class="black">{{activity.location}}</span></p>
+                    <p class="text_green"><i class="far fa-calendar-alt" style="color: #008000;"></i> When: <span class="black">{{activity.date.strftime("%B %e, %Y")}}</span></p>
+                    <p class="text_green"><i class="fas fa-map-marked-alt" style="color: #008000;"></i> Where: <span class="black">{{activity.location}}</span></p>
                     <!-- end activity deets -->
                 </div>
                 <!-- end top of details box --> 

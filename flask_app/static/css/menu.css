@@ -28,11 +28,37 @@
 
 .menu_trigger:hover {
     color:brown;
+    box-shadow:-5px 5px 25px #CFD8DC;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.menu_close{
+    position: relative;
+    top: 25px;
+    left: 300px;
+    color: brown;
+}
+
+.menu_close:hover {
+    color: red;
+    text-shadow: 3px -3px 25px rgba(0,128,0,.8);
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.menu_close:active {
+    top:28px;
+    transition: all 0.1s ease-in;
 }
 
 .offcanvas, #offcanvasExample.offcanvas-start.show {
     margin-top: 3%;
-    height: 224px;
+    height: 255px;
     background-color: honeydew;
     border-top: 3px solid green;
     border-right: 3px solid green;
@@ -41,20 +67,25 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    box-shadow:5px 5px 25px rgb(153, 134, 109);
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 .menu__box {
     padding: 10px;
     margin: 0;
     list-style: none;
-    width: 95%;
+    width: 80%;
 }
 
 .menu__item {
     margin: 0;
     display: block;
-    padding: 12px 0 12px 75px ;
+    padding: 5px 0 12px 45px ;
     color: green;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
