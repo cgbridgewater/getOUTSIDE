@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/modal.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/menu.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/update.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/buttons.css') }}">
@@ -97,11 +98,45 @@
                 <!-- submit button -->
                 <a href="/getoutside/myprofile" class="button green" role="button">CANCEL</a>
                 <input class="button blue" type="submit" value="UPDATE">
-                <a href="/getoutside/myprofile/delete" class="button brown" role="button">DELETE</a>
+                <button type="button" class="button brown" data-bs-toggle="modal" data-bs-target="#exampleModal">DELETE</button>
             </div>
             <!-- end buttons -->
         </form>
         <!-- end form -->
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- <div class="modal-header">
+                    </div> -->
+                    <div class="modal-body">
+                        <div class="d-flex justify-content-between align-content-center">
+                            <h1 class="modal-title" id="exampleModalLabel">DELETE ACCOUNT</h1>
+                            <a class="close" data-bs-dismiss="modal"aria-label="Close"><i class="button_close fa-regular fa-circle-xmark fa-2xl"></i></a>
+                        </div>
+                        
+                        <h3 class="text_center"><b class="text-danger">Whoa, there!</b></h3>
+                        <h5 class="text_center">Once you delete your account, there's no getting it back.</h5>
+                        <br>
+                        <h5 class="text_center">Make sure you want to do this!</h5>
+                        <br>
+                        <!-- Buttons -->
+                        <div class="buttons">
+                            <button type="button" class="button green" data-bs-dismiss="modal">CANCEL</button>
+                            <a href="/getoutside/myprofile/delete" class="button brown" role="button">DELETE IT!</a>
+                        </div>
+                        <!-- End buttons -->
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MODAL -->
+
+
         <!-- image add form -->
         <form action="/getoutside/addimage" method="POST" enctype="multipart/form-data" class="form_container" >
             <!-- form title -->
