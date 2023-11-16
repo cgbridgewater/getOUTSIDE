@@ -62,9 +62,7 @@
                                 <label class="form_text" htmlfor="activity">Activity Type:</label>
                             {% endif %}
                         {% endwith %}
-                    <!-- </div> -->
-                    <!-- dropdown menu -->
-                    <!-- <div class="flex2"> -->
+                        <!-- dropdown menu -->
                         <select name="activity">
                             <option value="">--Select Activity--</option>
                             {% if session['activity'] is defined %}
@@ -100,8 +98,6 @@
                                 <label class="form_text" htmlfor="location">Location:</label>
                             {% endif %}
                         {% endwith %}
-                    <!-- </div>
-                    <div class="flex2"> -->
                         <input class="input_width" type="text" name="location" value="{{session['location']}}">
                     </div>
                     <!-- End Input 2 -->
@@ -117,8 +113,6 @@
                                 <label class="form_text" htmlfor="date">Date:</label>
                             {% endif %}
                         {% endwith %}
-                    <!-- </div>
-                    <div class="flex2"> -->
                         <input class="input_width" type="date" name="date" value="{{session['date']}}">
                     </div>
                     <div>

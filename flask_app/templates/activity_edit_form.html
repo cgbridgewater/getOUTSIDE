@@ -74,9 +74,7 @@
                                 <label class="form_text" htmlfor="activity">Activity Type:</label>
                             {% endif %}
                         {% endwith %}
-                    <!-- </div> -->
                     <!-- dropdown menu -->
-                    <!-- <div class="flex2"> -->
                         <select id="activity" name="activity" value="{{activity.activity}}">
                             <option value="{{activity.activity}}" hidden selected >{{activity.activity}}</option>
                             <option value="Climbing">Climbing</option>
@@ -108,8 +106,6 @@
                                 <label class="form_text" htmlfor="location">Location:</label>
                             {% endif %}
                         {% endwith %}
-                    <!-- </div> -->
-                    <!-- <div class="flex2"> -->
                         <input class="input_width" type="text" id="location" name="location"  value="{{activity.location}}" >
                     </div>
                     <!-- End Input 2 -->
@@ -125,8 +121,6 @@
                                 <label class="form_text" htmlfor="date">Date:</label>
                             {% endif %}
                         {% endwith %}
-                    <!-- </div>
-                    <div class="flex2"> -->
                         <input class="input_width" type="date" id="date" name="date" value="{{activity.date.strftime('%Y-%m-%d')}}">
                     </div>
                     <div>
