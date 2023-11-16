@@ -51,7 +51,7 @@
                 <form action='/getoutside/activities/new' method="POST">
                     <input type="hidden" name="user_id" value="{{session['user_id']}}">
                     <!-- Input 1 -->
-                    <div class="text-start">
+                    <div class="form_row">
                         <!-- validation error return -->
                         {% with messages = get_flashed_messages(category_filter=["type"]) %}
                             {% if messages %}
@@ -62,9 +62,9 @@
                                 <label class="form_text" htmlfor="activity">Activity Type:</label>
                             {% endif %}
                         {% endwith %}
-                    </div>
+                    <!-- </div> -->
                     <!-- dropdown menu -->
-                    <div class="flex2">
+                    <!-- <div class="flex2"> -->
                         <select name="activity">
                             <option value="">--Select Activity--</option>
                             {% if session['activity'] is defined %}
@@ -89,7 +89,7 @@
                     <!-- end dropdown menu -->
                     <!-- End Input 1 -->
                     <!-- Input 2 -->
-                    <div class="text-start">
+                    <div class="form_row">
                         <!-- validation error return -->
                         {% with messages = get_flashed_messages(category_filter=["location"]) %}
                             {% if messages %}
@@ -100,13 +100,13 @@
                                 <label class="form_text" htmlfor="location">Location:</label>
                             {% endif %}
                         {% endwith %}
-                    </div>
-                    <div class="flex2">
+                    <!-- </div>
+                    <div class="flex2"> -->
                         <input class="input_width" type="text" name="location" value="{{session['location']}}">
                     </div>
                     <!-- End Input 2 -->
                     <!-- Input  -->
-                    <div class="text-start">
+                    <div class="form_row">
                         <!-- validation error return -->
                         {% with messages = get_flashed_messages(category_filter=["date"]) %}
                             {% if messages %}
@@ -117,8 +117,8 @@
                                 <label class="form_text" htmlfor="date">Date:</label>
                             {% endif %}
                         {% endwith %}
-                    </div>
-                    <div class="flex2">
+                    <!-- </div>
+                    <div class="flex2"> -->
                         <input class="input_width" type="date" name="date" value="{{session['date']}}">
                     </div>
                     <div>
