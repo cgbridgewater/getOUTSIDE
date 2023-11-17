@@ -28,7 +28,7 @@
 
 .menu_trigger:hover {
     color:brown;
-    box-shadow:-5px 5px 25px #CFD8DC;
+    box-shadow: 0px 0px 30px 3px rgb(153, 134, 109);
     -moz-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
     -webkit-transition: all 0.2s ease-in;
@@ -37,8 +37,8 @@
 
 .menu_close{
     position: relative;
-    top: 25px;
-    left: 300px;
+    top: 5px;
+    left: 325px;
     color: brown;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .menu_close:active {
-    top:28px;
+    top:8px;
     transition: all 0.1s ease-in;
 }
 
@@ -68,7 +68,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    box-shadow:5px 5px 25px rgb(153, 134, 109);
+    box-shadow: 0px 0px 40px 5px rgb(153, 134, 109);
     -moz-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
     -webkit-transition: all 0.2s ease-in;
