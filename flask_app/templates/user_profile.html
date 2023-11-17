@@ -54,7 +54,7 @@
             <!-- user image/name box -->
             <div class="image_box">
                 <!-- user name -->
-                <h1 class="user">{{user.first_name.capitalize()}}'s profile</h1>
+                <h1 class="user">{{user.first_name.capitalize()}}'s Profile</h1>
                 <!--  Profile Image Container -->
                 <div class="image">
                     <img class="profile_img" src="/static/images/{{user.image_file}}" alt="{{user.image_file}}">
@@ -225,8 +225,6 @@
                         <span class="tool-tip" data-tooltip-title="Find Friends" data-tooltip-position="top">
                             <a href="/getoutside/friends"><i class="plus fa-solid fa-magnifying-glass-plus"></i></a>
                         </span>
-                        <!-- <a href="/getoutside/friends"><i class="plus fa-solid fa-magnifying-glass-plus"></i></a>
-                        <span class="tooltip_text">Find Friends</span> -->
                     </h4>
                 </div>
                 <!-- friends list -->
@@ -272,7 +270,7 @@
                         {% set nsjoined.joined = nsjoined.joined +1 %}
                         <!-- display data -->
                             <h5 class="d-flex justify-content-between align-content-center">
-                                <a class="link" href="/getoutside/activity/{{a.id}}"> I'm going {{a.activity}} at {{a.location}} on {{a.date.strftime("%B %e, %Y")}} </a>
+                                <a class="link" href="/getoutside/activity/{{a.id}}"> I'm going {{a.activity}} at {{a.location.title()}} on {{a.date.strftime("%B %e, %Y")}} </a>
                             </h5>
                         {% endif %}
                     {% endfor %}
@@ -282,9 +280,8 @@
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="modal_label" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content">
-                        <!-- <div class="modal-header">
-                        </div> -->
                         <div class="modal-body">
+                            <!-- Modal Title -->
                             <div class="d-flex justify-content-between align-content-center">
                                 <h1 class="modal-title" id="modal_label">Create An Activity</h1>
                                 <a class="close" data-bs-dismiss="modal" aria-label="Close"><i class="button_close fa-regular fa-circle-xmark fa-2xl"></i></a>
@@ -360,7 +357,7 @@
                         <!-- filter for only logged in user -->
                         <!-- display data -->
                             <h5 class="d-flex justify-content-between align-content-center">
-                                <a class="link" href="/getoutside/activity/{{a.id}}"> {{a.creator.first_name.capitalize()}} {{a.creator.last_name.capitalize()}} is going {{a.activity}} at {{a.location}} on {{a.date.strftime("%B %e, %Y")}} </a>
+                                <a class="link" href="/getoutside/activity/{{a.id}}"> {{a.creator.first_name.capitalize()}} {{a.creator.last_name.capitalize()}} is going {{a.activity}} at {{a.location.title()}} on {{a.date.strftime("%B %e, %Y")}} </a>
                                 <a class="unjoin2_button unfollow" href="/getoutside/activity/{{a.id}}/remove"><i class="x_out fa-solid fa-square-xmark fa-lg"></i></a>
                             </h5>
                     {% endfor %}

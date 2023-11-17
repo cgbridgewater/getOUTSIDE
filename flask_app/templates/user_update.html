@@ -55,10 +55,10 @@
                 {% with messages = get_flashed_messages(category_filter=["update_first_name"]) %}
                     {% if messages %}
                         {% for message in messages %}
-                            <label for="first_name">Update First Name: <span class="error">{{message}}</span></label>
+                            <label for="first_name">First Name: <span class="error">{{message}}</span></label>
                         {% endfor %}
                     {% else %}
-                        <label for="first_name">Update First Name:</label>
+                        <label for="first_name">First Name:</label>
                     {% endif %}
                 {% endwith %}
                 <input class="input" type="text" name="first_name" placeholder="First Name" value="{{user.first_name}}" >
@@ -70,10 +70,10 @@
                 {% with messages = get_flashed_messages(category_filter=["update_last_name"]) %}
                     {% if messages %}
                         {% for message in messages %}
-                            <label for="last_name">Update Last Name: <span class="error">{{message}}</span></label>
+                            <label for="last_name">Last Name: <span class="error">{{message}}</span></label>
                         {% endfor %}
                     {% else %}
-                        <label for="last_name">Update First Name:</label>
+                        <label for="last_name">First Name:</label>
                     {% endif %}
                 {% endwith %}
                 <input class="input" type="text" name="last_name" placeholder="Last Name" value="{{user.last_name}}" >
@@ -84,10 +84,10 @@
                 {% with messages = get_flashed_messages(category_filter=["update_email"]) %}
                     {% if messages %}
                         {% for message in messages %}
-                            <label for="email">Update Email: <span class="error">{{message}}</span></label>
+                            <label for="email">Email: <span class="error">{{message}}</span></label>
                         {% endfor %}
                     {% else %}
-                        <label for="email">Update Email:</label>
+                        <label for="email">Email:</label>
                     {% endif %}
                 {% endwith %}
                 <input class="input" type="email" name="email" placeholder="email" value="{{user.email}}">

@@ -178,7 +178,7 @@
                                 {% if ns.counter == 1 %}
                                 <tr>
                                     <td>   
-                                        <a class="activity_link" href="/getoutside/activity/{{activity.id}}">{{activity.creator.first_name.capitalize()}} {{activity.creator.last_name.capitalize()}} is going {{activity.activity}} at {{activity.location}}. <br>On {{activity.date.strftime("%B %e, %Y")}} </a>
+                                        <a class="activity_link" href="/getoutside/activity/{{activity.id}}">{{activity.creator.first_name.capitalize()}} {{activity.creator.last_name.capitalize()}} is going {{activity.activity}} at {{activity.location.title()}}. <br>On {{activity.date.strftime("%B %e, %Y")}} </a>
                                     </td>
                                     <td>
                                         <a class="unjoin_button" href="/getoutside/activity/{{activity.id}}/un-join"><i class="fa-solid fa-square-xmark fa-xl" id="unjoin"></i></a>
@@ -187,7 +187,7 @@
                                 {% else %}
                                 <tr>
                                     <td>
-                                        <a class="activity_link" href="/getoutside/activity/{{activity.id}}">{{activity.creator.first_name.capitalize()}} {{activity.creator.last_name.capitalize()}} is going {{activity.activity}} at {{activity.location}}. <br>On {{activity.date.strftime("%B %e, %Y")}} </a>
+                                        <a class="activity_link" href="/getoutside/activity/{{activity.id}}">{{activity.creator.first_name.capitalize()}} {{activity.creator.last_name.capitalize()}} is going {{activity.activity}} at {{activity.location.title()}}. <br>On {{activity.date.strftime("%B %e, %Y")}} </a>
                                     </td>
                                     <td>
                                         <a class="join_button" href="/getoutside/activity/{{activity.id}}/join3"><i class="fa-solid fa-arrow-up-right-from-square fa-xl" id="join"></i></a>
@@ -198,7 +198,7 @@
                             <!-- display data -->
                             <tr>
                                 <td>   
-                                    <a class="activity_link" href="/getoutside/activity/{{activity.id}}"><b>You</b>  are going {{activity.activity}} at {{activity.location}}. <br>On {{activity.date.strftime("%B %e, %Y")}} </a>
+                                    <a class="activity_link" href="/getoutside/activity/{{activity.id}}"><b>You</b>  are going {{activity.activity}} at {{activity.location.title()}}. <br>On {{activity.date.strftime("%B %e, %Y")}} </a>
                                 </td>
                                 <td>
                                     <a class="edit_button" href="/getoutside/activity/{{activity.id}}/edit"><i class="fa-solid fa-pen-to-square fa-xl" id="edit"></i></a>

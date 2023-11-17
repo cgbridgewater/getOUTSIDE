@@ -45,7 +45,7 @@
         <!-- end menu popout -->
             <!-- page title -->
         <div class="user">
-            <h1 class="text_green">Get OUTSIDE with {{activity.creator.first_name.capitalize()}} and go {{activity.activity}}!</h1>
+            <h1 class="text_green">Get OUTSIDE with {{activity.creator.first_name.title()}} and go {{activity.activity}}!</h1>
         </div>
         <!-- Activities Container -->
         <div class="activity_container">
@@ -74,7 +74,7 @@
                         {% endif %}
                     </span></p>
                     <p class="text_green"><i class="far fa-calendar-alt" style="color: #008000;"></i> When: <span class="black">{{activity.date.strftime("%B %e, %Y")}}</span></p>
-                    <p class="text_green"><i class="fas fa-map-marked-alt" style="color: #008000;"></i> Where: <span class="black">{{activity.location}}</span></p>
+                    <p class="text_green"><i class="fas fa-map-marked-alt" style="color: #008000;"></i> Where: <span class="black">{{activity.location.title()}}</span></p>
                     <!-- end activity deets -->
                 </div>
                 <!-- end top of details box --> 
