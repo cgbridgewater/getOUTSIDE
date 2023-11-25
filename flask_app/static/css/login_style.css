@@ -6,7 +6,7 @@
 }
 
 .error, .brown {
-    color: brown;
+    color: #6b0f1a;
 }
 
 .title {
@@ -159,8 +159,8 @@ label {
 .input, .input:focus, input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus {
-    color:brown;
-    -webkit-text-fill-color: brown;
+    color:#6b0f1a;
+    -webkit-text-fill-color: #6b0f1a;
     -webkit-box-shadow: 0 0 0px 1000px #fffef5 inset;
     transition: background-color 5000s ease-in-out 0s;
     font-weight: 700;
@@ -171,7 +171,7 @@ input:-webkit-autofill:focus {
 
 .input:focus, .input:hover {
     border:2px solid  rgba(0, 128, 0, .9);
-    caret-color: brown;
+    caret-color: #6b0f1a;
 }
 
 /* RIGHT BOX */
@@ -180,7 +180,7 @@ input:-webkit-autofill:focus {
     top: 8px;
     right: 12px;
     text-decoration: underline;
-    color: brown;
+    color: #6b0f1a;
     font-size: 17px;
 }
 
@@ -191,7 +191,7 @@ input:-webkit-autofill:focus {
 
 .list {
     list-style:square;
-    color: brown;
+    color: #6b0f1a;
     font-size: 17px;
     font-weight: 600;
 }
@@ -289,11 +289,11 @@ list-style-type: none;
 
 .sign_in_link {
     /* text-decoration: none; */
-    color: brown;
+    color: #6b0f1a;
 }
 
 .sign_in_link:hover {
-    color: darkred;
+    color: #583e23;
     text-shadow: 1px 2px 8px green;
 }
 /* END SIGNUP LOGIN LINK */

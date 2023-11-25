@@ -50,7 +50,7 @@
     position: relative;
     top: 7px;
     font-weight: 700;
-    color:darkred;
+    color:#6B0F1A;
 }
 
 .outside {
@@ -66,15 +66,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    color:darkred;
-}
-
-#filter {
-    border: 3px solid green;
-    color: green;
-    font-weight: 600;
-    background-color: honeydew;
-    box-shadow: 5px 8px 10px rgba(2, 20, 2, 0.5);
+    color:#6b0f1a;
 }
 
 .wrapper {
@@ -95,7 +87,8 @@
 
 .activity_link {
     text-decoration: none;
-    color: brown;
+    color: #6b0f1a;
+    font-weight: 700;
     margin:3px;
 }
 

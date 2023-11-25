@@ -164,7 +164,7 @@ label {
 input.input {
     color:green;
     background-color: #fffef5;
-    border:2px solid rgba(165, 42, 42, .6);
+    border:2px solid rgba(107, 15, 26, 0.6);
 }
 
 input.input:focus {
@@ -180,7 +180,7 @@ input.input:focus {
 } */
 
 .error {
-    color: brown;
+    color: darkred;
 }
 
 
@@ -318,7 +318,7 @@ list-style-type: none;
 
 .list {
     list-style:square;
-    color: brown;
+    color: #6b0f1a;
     font-weight: 600;
 }
 
@@ -331,11 +331,11 @@ list-style-type: none;
 
 .sign_in_link {
     /* text-decoration: none; */
-    color: brown;
+    color: #6b0f1a;
 }
 
 .sign_in_link:hover {
-    color: darkred;
+    color: #583e23;
     text-shadow: 1px 2px 8px green;
 }
 

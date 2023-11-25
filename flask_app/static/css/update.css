@@ -9,7 +9,7 @@ body {
 }
 
 .brown_text {
-    color: brown;
+    color: #6b0f1a;
     font-weight: 700;
 }
 
@@ -54,8 +54,8 @@ label {
     border-radius: 5px;
     padding: 0 5px;
     width: 200px;
-    color:brown;
-    -webkit-text-fill-color: brown;
+    color:#6b0f1a;
+    -webkit-text-fill-color: #6b0f1a;
     -webkit-box-shadow: 0 0 0px 1000px #fffef5 inset;
     transition: background-color 5000s ease-in-out 0s;
     font-weight: 700;
@@ -66,14 +66,14 @@ label {
 
 .input:focus, .input:hover, .input2:hover {
     border:2px solid  rgba(0, 128, 0, .9);
-    caret-color: brown;
+    caret-color: #6b0f1a;
 }
 
 .input2 {
     background-color: #FFFFF5;
     border: 2px solid rgba(0, 128, 0, .4);
     border-radius: 5px;
-    color: brown;
+    color: #6b0f1a;
     font-weight: bold;
     cursor: pointer;
 }

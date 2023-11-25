@@ -27,28 +27,6 @@ h1 {
 	justify-content: center;
 	box-shadow: 5px 8px 10px rgba(2, 20, 2, 0.5);
 }
-/* 
-.filter {
-	background-color:#fffef5;
-	border-color: green;
-	border-radius:5px;
-	min-width:300px;
-    color: brown;
-	font-size: 18px;
-    font-weight: 700;
-	text-transform: uppercase;
-	margin-left: 32px;
-	padding-left: 10px;
-	height: 32px;
-}
-
-.filter::placeholder {
-	color: rgba(165, 42, 42, .6);
-} */
-
-/* .filter::-ms-input-placeholder { 
-	color: rgba(165, 42, 42, .6);
-} */
 
 .input, .input:focus, .input:-webkit-autofill,
 .input:-webkit-autofill:hover, 
@@ -60,8 +38,8 @@ h1 {
 	padding-left: 10px;
 	height: 32px;
     padding: 0 5px;
-    color:brown;
-    -webkit-text-fill-color: brown;
+    color:#6b0f1a;
+    -webkit-text-fill-color: #6b0f1a;
     -webkit-box-shadow: 0 0 0px 1000px #fffef5 inset;
     transition: background-color 5000s ease-in-out 0s;
     font-weight: 700;
@@ -72,7 +50,7 @@ h1 {
 
 .input:focus, .input:hover {
     border:2px solid  rgba(0, 128, 0, .9);
-    caret-color: brown;
+    caret-color: #6b0f1a;
 }
 
 .input::placeholder {
@@ -86,7 +64,7 @@ h1 {
 }
 
 .filter_x-out{
-	color: brown;
+	color: #6b0f1a;
 	/* font-size: 18px; */
 	position: relative;
 	/* top: 0.5px; */
@@ -146,7 +124,7 @@ tr {
 }
 
 .text:hover{
-    color: brown;
+    color: #6b0f1a;
     text-shadow:0px 0px 30px darkgreen;
     -moz-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;

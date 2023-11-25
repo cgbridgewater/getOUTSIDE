@@ -31,7 +31,7 @@
 }
 
 .text_brown {
-    color: brown;
+    color: #6b0f1a;
     font-weight: 700;
 }
 
@@ -132,8 +132,8 @@ iframe {
     border-radius: 5px;
     padding: 0 5px;
     width: 50%;
-    color:brown;
-    -webkit-text-fill-color: brown;
+    color:#6b0f1a;
+    -webkit-text-fill-color: #6b0f1a;
     -webkit-box-shadow: 0 0 0px 1000px #fffef5 inset;
     transition: background-color 5000s ease-in-out 0s;
     font-weight: 700;
@@ -143,7 +143,7 @@ iframe {
 
 .input:focus, .input:hover {
     border:2px solid  rgba(0, 128, 0, .9);
-    caret-color: brown;
+    caret-color: #6b0f1a;
 }
 
 .input::placeholder {
@@ -167,6 +167,7 @@ iframe {
 
 .commenter_data {
     font-size: 12px;
+    color: #6b0f1a;
 }
 
 .spacer {

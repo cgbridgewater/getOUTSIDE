@@ -27,7 +27,7 @@
 }
 
 .menu_trigger:hover {
-    color:brown;
+    color:#6b0f1a;
     box-shadow: 0px 0px 30px 3px rgb(153, 134, 109);
     -moz-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
@@ -39,7 +39,7 @@
     position: relative;
     top: 5px;
     left: 325px;
-    color: brown;
+    color: #6b0f1a;
 }
 
 .menu_close:hover {
@@ -95,7 +95,7 @@
 }
 .menu__item:hover {
     background-color: #CFD8DC;
-    color: brown;
+    color: #6b0f1a;
     text-shadow:0px 0px 30px green;
     -moz-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;

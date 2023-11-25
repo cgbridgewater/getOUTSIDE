@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+.text_brown {
+    color: #6b0f1a;
+}
+
 .top_wrapper {
     width: 90%;
     margin:auto;
@@ -284,7 +288,7 @@ td {
 
 .link {
     text-decoration: none;
-    color:#857659;
+    color:#6b0f1a;
     margin: 5px 5px;
 }
 

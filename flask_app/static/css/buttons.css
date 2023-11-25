@@ -42,7 +42,7 @@ input[type="file"]::file-selector-button:hover {
 
 /* create button specific */
 .create_button {
-    width: 200px !important;
+    width: 180px !important;
 }
 
 .button:active, .create_button:active {
@@ -71,7 +71,7 @@ input[type="file"]::file-selector-button:hover {
 }
 
 .brown,.brown:hover  {
-    background-color: brown;
+    background-color: #6B0F1A;
 }
 
 .blue, .blue:hover {
@@ -91,7 +91,7 @@ input[type="file"]::file-selector-button:hover {
     position: relative;
     bottom: 5px;
     left: 15px;
-    color: brown;
+    color: #6B0F1A;
 }
 
 .button_close:hover {
@@ -103,7 +103,7 @@ input[type="file"]::file-selector-button:hover {
 .unjoin_button {
     position: relative;
     top: 15px;
-    color: brown;
+    color: #6B0F1A;
 }
 
 .unjoin_button:hover {
@@ -119,7 +119,7 @@ input[type="file"]::file-selector-button:hover {
 .unjoin2_button {
     position: relative;
     top: 15px;
-    color: brown;
+    color: #6B0F1A;
 }
 
 .unjoin2_button:hover {
