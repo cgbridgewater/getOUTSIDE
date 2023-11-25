@@ -10,12 +10,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/modal.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/menu.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/update.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/buttons.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/page_header.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 </head>
@@ -61,7 +61,7 @@
                         <label for="first_name">First Name:</label>
                     {% endif %}
                 {% endwith %}
-                <input class="input" type="text" name="first_name" placeholder="First Name" value="{{user.first_name}}" >
+                <input class="input form-control shadow-none" type="text" name="first_name" placeholder="First Name" value="{{user.first_name}}" >
             </div>
             <!-- end input 1 -->
             <!-- input 2 -->
@@ -76,7 +76,7 @@
                         <label for="last_name">First Name:</label>
                     {% endif %}
                 {% endwith %}
-                <input class="input" type="text" name="last_name" placeholder="Last Name" value="{{user.last_name}}" >
+                <input class="input form-control shadow-none" type="text" name="last_name" placeholder="Last Name" value="{{user.last_name}}" >
             </div>
             <!-- end input 2 -->
             <!-- input 3 -->
@@ -90,7 +90,7 @@
                         <label for="email">Email:</label>
                     {% endif %}
                 {% endwith %}
-                <input class="input" type="email" name="email" placeholder="email" value="{{user.email}}">
+                <input class="input form-control shadow-none" type="email" name="email" placeholder="email" value="{{user.email}}">
             </div>  
             <!-- end input 3 -->
             <!-- buttons -->
@@ -115,11 +115,11 @@
                             <a class="close" data-bs-dismiss="modal"aria-label="Close"><i class="button_close fa-regular fa-circle-xmark fa-2xl"></i></a>
                         </div>
                         
-                        <h3 class="text_center"><b class="text-danger">Whoa, there!</b></h3>
-                        <h5 class="text_center">Once you delete your account, there's no getting it back.</h5>
+                        <h2 class="text_center"><b class="text-danger">Whoa, there!</b></h2>
                         <br>
-                        <h5 class="text_center">Make sure you want to do this!</h5>
+                        <h5 class="text_center brown_text">Once you delete your account, there's no getting it back.</h5>
                         <br>
+                        <h5 class="text_center brown_text">Make sure you want to do this!</h5>
                         <!-- Buttons -->
                         <div class="buttons">
                             <button type="button" class="button green" data-bs-dismiss="modal">CANCEL</button>

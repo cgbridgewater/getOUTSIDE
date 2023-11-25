@@ -51,14 +51,14 @@ input:-webkit-autofill:focus {
     color:brown;
     -webkit-text-fill-color: brown;
     -webkit-box-shadow: 0 0 0px 1000px #fffef5 inset;
-    transition: background-color 0s ease-in-out 0s;
+    transition: background-color 5000s ease-in-out 0s;
     font-weight: 700;
     background-color: #fffef5;
     border:2px solid rgba(0, 128, 0, .4);
 }
 
 
-.input:focus {
+.input:focus, .input:hover {
     border:2px solid  rgba(0, 128, 0, .9);
     caret-color: brown;
 }
@@ -134,7 +134,7 @@ position: fixed;
     background-image: url("https://www.visitbend.com/wp-content/uploads/2018/04/mt-bachelor-1600.jpg"); 
 }
 .slideshow li:nth-child(2) span { 
-    background-image: url("https://static.evo.com/content/travel-guides/bike/or/bachelor2.jpg");
+    background-image: url("https://www.beaversbendcreativeescape.com/wp-content/uploads/2019/09/bikers-on-forest-trail.jpg");
     animation-delay: 3s; 
 }
 .slideshow li:nth-child(3) span { 

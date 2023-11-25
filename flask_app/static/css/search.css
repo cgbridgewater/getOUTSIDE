@@ -27,7 +27,7 @@ h1 {
 	justify-content: center;
 	box-shadow: 5px 8px 10px rgba(2, 20, 2, 0.5);
 }
-
+/* 
 .filter {
 	background-color:#fffef5;
 	border-color: green;
@@ -44,11 +44,39 @@ h1 {
 
 .filter::placeholder {
 	color: rgba(165, 42, 42, .6);
-	opacity: 1; /* Firefox */
+} */
+
+/* .filter::-ms-input-placeholder { 
+	color: rgba(165, 42, 42, .6);
+} */
+
+.input, .input:focus, .input:-webkit-autofill,
+.input:-webkit-autofill:hover, 
+.input:-webkit-autofill:focus {
+	border-radius:5px;
+	min-width:300px;
+	font-size: 18px;
+	margin-left: 32px;
+	padding-left: 10px;
+	height: 32px;
+    padding: 0 5px;
+    color:brown;
+    -webkit-text-fill-color: brown;
+    -webkit-box-shadow: 0 0 0px 1000px #fffef5 inset;
+    transition: background-color 5000s ease-in-out 0s;
+    font-weight: 700;
+    background-color: #fffef5;
+    border:2px solid rgba(0, 128, 0, .4);
+	text-transform: uppercase;
 }
 
-.filter::-ms-input-placeholder { /* Edge 12 -18 */
-	color: rgba(165, 42, 42, .6);
+.input:focus, .input:hover {
+    border:2px solid  rgba(0, 128, 0, .9);
+    caret-color: brown;
+}
+
+.input::placeholder {
+    opacity: 0.65;
 }
 
 .filter-post {
