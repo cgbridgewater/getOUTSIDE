@@ -131,8 +131,8 @@ header {
     border: 2px solid green;
     border-radius: 10px;
     width: 325px;
-    height: 220px;
-    margin: 10px auto 0;
+    height: 180px;
+    margin: 7px auto 0;
 }
 
 .down {
@@ -177,7 +177,7 @@ input:-webkit-autofill:focus {
 /* RIGHT BOX */
 .secondary_title {
     position: relative;
-    top: 8px;
+    top: 6px;
     right: 12px;
     text-decoration: underline;
     color: #6b0f1a;
@@ -215,9 +215,10 @@ list-style-type: none;
 .slideshow,
 .slideshow:after { 
     position: relative;
+    top: -10px;
     margin: 0 auto;
     width: 325px;
-    height: 200px;
+    height: 175px;
     z-index: 0; 
 }
 
