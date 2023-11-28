@@ -36,10 +36,12 @@
 }
 
 .activity_container {
+    margin: 10px 0;
     min-width: 360px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    
 }
 
 .left_box {
@@ -64,6 +66,7 @@
     border: 3px solid green;
     border-radius: 5px;
     box-shadow: 5px 8px 10px rgba(2, 20, 2, 0.5);
+    margin-bottom: 10px;
 }
 
 .flex {

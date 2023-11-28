@@ -45,7 +45,7 @@
         <!-- end menu popout -->
             <!-- page title -->
         <div class="user">
-            <h1 class="text_green">Get OUTSIDE with {{activity.creator.first_name.title()}} and go {{activity.activity}}!</h1>
+            <h1 class="text_green mt-2">Get OUTSIDE with {{activity.creator.first_name.title()}} and go {{activity.activity}}!</h1>
         </div>
         <!-- Activities Container -->
         <div class="activity_container">
@@ -160,14 +160,14 @@
                     {% if attendee.id == session.user_id %}
                     <div class="flex">
                         <h5 class="text_green">{{attendee.first_name.capitalize()}} {{attendee.last_name.capitalize()}}</h5>
-                        <a class="unjoin_button"  href="/getoutside/activity/{{activity.id}}/unjoin"><i class="fa-solid fa-square-xmark fa-xl"></i> </a>
+                        <a class="unjoin_button"  href="/getoutside/activity/{{activity.id}}/unjoin"><i class="fa-solid fa-square-xmark fa-xl"></i></a>
                     </div>
                     {% else %}
                         {% if attendee.first_name == None %}
                         {%else%}
-                            <p>
+                            <h5>
                                 <a class="text_green2" href="/getoutside/athlete/{{attendee.id}}"> {{attendee.first_name.capitalize()}} {{attendee.last_name.capitalize()}} </a>
-                            </p>    
+                            </h5>    
                         {% endif %}
                         {% endif %}
                     {% endfor %}

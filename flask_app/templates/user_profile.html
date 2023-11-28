@@ -93,123 +93,125 @@
                     </tr>
                     <tr>
                         <td><h4>My Badges:</h4></td>
-                        <td ><h4 class="text-end me-4">
-                            <!-- counter for joined activities -->
-                            {% set nsjoined = namespace(joined =0) %}
-                            {% for join in all_joined %}
-                                {% set nsjoined.joined = nsjoined.joined +1 %}
-                            {% endfor %}
-                                <!-- counter for friends made -->
-                            {% set nsfriends = namespace(friends = 0) %}
-                            {% for follower in followers %}
-                                {% set nsfriends.friends = nsfriends.friends +1 %}
-                            {% endfor %}
-                            <!-- counter for comments made -->
-                            {% set nscomments = namespace(comment = 0) %}
-                            {% for comment in comments %}
-                                {% if comment.commenter.upper() == user.first_name.upper() +" " + user.last_name.upper() %}
-                                    {% set nscomments.comment = nscomments.comment +1 %}
+                        <td>
+                            <h4 class="text-end me-4">
+                                <!-- counter for joined activities -->
+                                {% set nsjoined = namespace(joined =0) %}
+                                {% for join in all_joined %}
+                                    {% set nsjoined.joined = nsjoined.joined +1 %}
+                                {% endfor %}
+                                    <!-- counter for friends made -->
+                                {% set nsfriends = namespace(friends = 0) %}
+                                {% for follower in followers %}
+                                    {% set nsfriends.friends = nsfriends.friends +1 %}
+                                {% endfor %}
+                                <!-- counter for comments made -->
+                                {% set nscomments = namespace(comment = 0) %}
+                                {% for comment in comments %}
+                                    {% if comment.commenter.upper() == user.first_name.upper() +" " + user.last_name.upper() %}
+                                        {% set nscomments.comment = nscomments.comment +1 %}
+                                    {% endif %}
+                                {% endfor %}
+                                <!-- sign up badge -->
+                                <span class="tool-tip" data-tooltip-title="Signed Up To Get OUTSIDE" data-tooltip-position="top">
+                                    <img class="badges " src="/static/images/badges/signedup.png" alt="sign up badge">
+                                </span>
+                                <!-- upload image badge -->
+                                {% if user.image_file != "default.png" %}
+                                <span class="tool-tip" data-tooltip-title="Make It Custom Custom Image" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/profile_badge.png" alt="profile pic badge">
+                                </span>
+                                {% else %}
+                                <span class="tool-tip" data-tooltip-title="Customize Your Profile Image To Earn Badge" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/empty.png" alt="empty badge"> 
+                                </span>
                                 {% endif %}
-                            {% endfor %}
-                            <!-- sign up badge -->
-                            <span class="tool-tip" data-tooltip-title="Signed Up To Get OUTSIDE" data-tooltip-position="top">
-                                <img class="badges " src="/static/images/badges/signedup.png" alt="sign up badge">
-                            </span>
-                            <!-- upload image badge -->
-                            {% if user.image_file != "default.png" %}
-                            <span class="tool-tip" data-tooltip-title="Make It Custom Custom Image" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/profile_badge.png" alt="profile pic badge">
-                            </span>
-                            {% else %}
-                            <span class="tool-tip" data-tooltip-title="Customize Your Profile Image To Earn Badge" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/empty.png" alt="empty badge"> 
-                            </span>
-                            {% endif %}
-                            <!-- friends badge -->
-                            {% if nsfriends.friends > 0 %}
-                            <span class="tool-tip" data-tooltip-title="Friend Finder" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/friends.png" alt="friends made">
-                            </span>
-                            {% else %}
-                            <span class="tool-tip" data-tooltip-title="Add A Friend To Earn Badge" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/empty.png" alt="empty badge"> 
-                            </span>
-                            {% endif %}
-                            <br>
-                            <!-- activities created badges -->
-                            {% if ns.events > 0 and ns.events < 5 %}
-                            <span class="tool-tip" data-tooltip-title="Events Led" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/1activities.png" alt="events created badge">
-                            </span>
-                            {% elif ns.events >= 5 and ns.events < 10 %}
-                            <span class="tool-tip" data-tooltip-title="Events Led" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/5activities.png" alt="events created badge">
-                            </span>
-                            {% elif ns.events >= 10 and ns.events < 25 %}
-                            <span class="tool-tip" data-tooltip-title="Events Led" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/10activities.png" alt="events created badge">
-                            </span>
-                            {% elif ns.events >= 25 and ns.events < 50 %}
-                            <span class="tool-tip" data-tooltip-title="Events Led" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/25activities.png" alt="events created badge">
-                            </span>
-                            {% elif ns.events >= 50 and ns.events < 100 %}
-                            <span class="tool-tip" data-tooltip-title="Events Led" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/50activities.png" alt="events created badge">
-                            </span>
-                            {% else %}
-                            <span class="tool-tip" data-tooltip-title="Create An Event To Earn Badge" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/empty.png" alt="empty badge"> 
-                            </span>
-                            {% endif %}
-                            <!-- activities joined badges -->
-                            {% if nsjoined.joined > 0 and nsjoined.joined < 5 %}
-                            <span class="tool-tip" data-tooltip-title="Joined In" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/1joined.png" alt="activities joined badge" data-bs-toggle="tooltip" data-bs-placement="top" title="Join 1+ Events"> 
-                            </span>
-                            {% elif nsjoined.joined >= 5 and nsjoined.joined < 10 %}
-                            <span class="tool-tip" data-tooltip-title="Joined In" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/5joined.png" alt="activities joined badge" data-bs-toggle="tooltip" data-bs-placement="top" title="Join 5+ Events"> 
-                            </span>
-                            {% elif nsjoined.joined >= 10 and nsjoined.joined < 25 %}
-                            <span class="tool-tip" data-tooltip-title="Joined In" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/10joined.png" alt="activities joined badge" data-bs-toggle="tooltip" data-bs-placement="top" title="Join 10+ Events"> 
-                            </span>
-                            {% elif nsjoined.joined >= 25 and nsjoined.joined < 50 %}
-                            <span class="tool-tip" data-tooltip-title="Joined In" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/25joined.png" alt="activities joined badge" data-bs-toggle="tooltip" data-bs-placement="top" title="Join 25+ Events"> 
-                            </span>
-                            {% elif nsjoined.joined >= 50 and nsjoined.joined < 100 %}
-                            <span class="tool-tip" data-tooltip-title="Joined In" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/50joined.png" alt="activities joined badge" data-bs-toggle="tooltip" data-bs-placement="top" title="Join 50+ Events"> 
-                            </span>
-                            {% elif nsjoined.joined >= 100 %}
-                            <span class="tool-tip" data-tooltip-title="Joined In" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/100joined.png" alt="activities joined badge" data-bs-toggle="tooltip" data-bs-placement="top" title="Join 50+ Events"> 
-                            </span>
-                            {% else %}
-                            <span class="tool-tip" data-tooltip-title="Join An Event To Earn Badge" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/empty.png" alt="empty badge"> 
-                            </span>
-                            {% endif %}
-                            {% if nscomments.comment >0 and nscomments.comment < 5 %}
-                            <span class="tool-tip" data-tooltip-title="Chat It Up" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/1comments.png" alt="activities joined badge"> 
-                            </span>
-                            {% elif nscomments.comment >= 5 and nscomments.comment < 10 %}
-                            <span class="tool-tip" data-tooltip-title="Chat It Up" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/5comments.png" alt="activities joined badge"> 
-                            </span>
-                            {% elif nscomments.comment >= 10 and nscomments.comment < 25 %}
-                            <span class="tool-tip" data-tooltip-title="Chat It Up" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/10comments.png" alt="activities joined badge"> 
-                            </span>
-                            {% else %}
-                            <span class="tool-tip" data-tooltip-title="Make A Comment To Earn Badge" data-tooltip-position="top">
-                                <img class="badges" src="/static/images/badges/empty.png" alt="empty badge"> 
-                            </span>
-                            {% endif %}
-                        </h4></td>
+                                <!-- friends badge -->
+                                {% if nsfriends.friends > 0 %}
+                                <span class="tool-tip" data-tooltip-title="Friend Finder" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/friends.png" alt="friends made">
+                                </span>
+                                {% else %}
+                                <span class="tool-tip" data-tooltip-title="Add A Friend To Earn Badge" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/empty.png" alt="empty badge"> 
+                                </span>
+                                {% endif %}
+                                <br>
+                                <!-- activities created badges -->
+                                {% if ns.events > 0 and ns.events < 5 %}
+                                <span class="tool-tip" data-tooltip-title="Events Led" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/1activities.png" alt="events created badge">
+                                </span>
+                                {% elif ns.events >= 5 and ns.events < 10 %}
+                                <span class="tool-tip" data-tooltip-title="Events Led" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/5activities.png" alt="events created badge">
+                                </span>
+                                {% elif ns.events >= 10 and ns.events < 25 %}
+                                <span class="tool-tip" data-tooltip-title="Events Led" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/10activities.png" alt="events created badge">
+                                </span>
+                                {% elif ns.events >= 25 and ns.events < 50 %}
+                                <span class="tool-tip" data-tooltip-title="Events Led" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/25activities.png" alt="events created badge">
+                                </span>
+                                {% elif ns.events >= 50 and ns.events < 100 %}
+                                <span class="tool-tip" data-tooltip-title="Events Led" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/50activities.png" alt="events created badge">
+                                </span>
+                                {% else %}
+                                <span class="tool-tip" data-tooltip-title="Create An Event To Earn Badge" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/empty.png" alt="empty badge"> 
+                                </span>
+                                {% endif %}
+                                <!-- activities joined badges -->
+                                {% if nsjoined.joined > 0 and nsjoined.joined < 5 %}
+                                <span class="tool-tip" data-tooltip-title="Joined In" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/1joined.png" alt="activities joined badge" data-bs-toggle="tooltip" data-bs-placement="top" title="Join 1+ Events"> 
+                                </span>
+                                {% elif nsjoined.joined >= 5 and nsjoined.joined < 10 %}
+                                <span class="tool-tip" data-tooltip-title="Joined In" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/5joined.png" alt="activities joined badge" data-bs-toggle="tooltip" data-bs-placement="top" title="Join 5+ Events"> 
+                                </span>
+                                {% elif nsjoined.joined >= 10 and nsjoined.joined < 25 %}
+                                <span class="tool-tip" data-tooltip-title="Joined In" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/10joined.png" alt="activities joined badge" data-bs-toggle="tooltip" data-bs-placement="top" title="Join 10+ Events"> 
+                                </span>
+                                {% elif nsjoined.joined >= 25 and nsjoined.joined < 50 %}
+                                <span class="tool-tip" data-tooltip-title="Joined In" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/25joined.png" alt="activities joined badge" data-bs-toggle="tooltip" data-bs-placement="top" title="Join 25+ Events"> 
+                                </span>
+                                {% elif nsjoined.joined >= 50 and nsjoined.joined < 100 %}
+                                <span class="tool-tip" data-tooltip-title="Joined In" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/50joined.png" alt="activities joined badge" data-bs-toggle="tooltip" data-bs-placement="top" title="Join 50+ Events"> 
+                                </span>
+                                {% elif nsjoined.joined >= 100 %}
+                                <span class="tool-tip" data-tooltip-title="Joined In" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/100joined.png" alt="activities joined badge" data-bs-toggle="tooltip" data-bs-placement="top" title="Join 50+ Events"> 
+                                </span>
+                                {% else %}
+                                <span class="tool-tip" data-tooltip-title="Join An Event To Earn Badge" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/empty.png" alt="empty badge"> 
+                                </span>
+                                {% endif %}
+                                {% if nscomments.comment >0 and nscomments.comment < 5 %}
+                                <span class="tool-tip" data-tooltip-title="Chat It Up" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/1comments.png" alt="activities joined badge"> 
+                                </span>
+                                {% elif nscomments.comment >= 5 and nscomments.comment < 10 %}
+                                <span class="tool-tip" data-tooltip-title="Chat It Up" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/5comments.png" alt="activities joined badge"> 
+                                </span>
+                                {% elif nscomments.comment >= 10 and nscomments.comment < 25 %}
+                                <span class="tool-tip" data-tooltip-title="Chat It Up" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/10comments.png" alt="activities joined badge"> 
+                                </span>
+                                {% else %}
+                                <span class="tool-tip" data-tooltip-title="Make A Comment To Earn Badge" data-tooltip-position="top">
+                                    <img class="badges" src="/static/images/badges/empty.png" alt="empty badge"> 
+                                </span>
+                                {% endif %}
+                            </h4>
+                        </td>
                     </tr>
                     </tbody>
                 </table>

@@ -97,6 +97,10 @@ td {
     border: none;
 }
 
+.badge_container {
+    width: 160px;
+}
+
 .flex2 {
     display: flex;
     justify-content: space-between;

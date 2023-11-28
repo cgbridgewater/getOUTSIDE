@@ -9,10 +9,10 @@
     align-items: center;
     position: fixed;
     top: 10%;
-    left: -30px;
+    left: -39px;
     height: 50px;
     width: 90px;
-    padding-top: 10px;
+    padding-top: 18px;
     transform: rotate(270deg);
     cursor: pointer;
     border-left: 3px solid green;

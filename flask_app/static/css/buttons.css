@@ -102,18 +102,18 @@ input[type="file"]::file-selector-button:hover {
 
 .unjoin_button {
     position: relative;
-    top: 15px;
+    top: 2px;
     color: #6B0F1A;
 }
 
-.unjoin_button:hover {
+.unjoin_button:hover,.unjoin2_button:hover, .unjoin3_button:hover {
     color: red;
     text-shadow:  0.2rem 0.2rem .5rem rgba(0, 128, 0, 0.7);
 }
 
 .unjoin_button:active {
     position: relative;
-    top: 17px;
+    top: 4px;
 }
 
 .unjoin2_button {
@@ -122,19 +122,25 @@ input[type="file"]::file-selector-button:hover {
     color: #6B0F1A;
 }
 
-.unjoin2_button:hover {
-    color: red;
-    text-shadow:  0.2rem 0.2rem .5rem rgba(0, 128, 0, 0.7);
-}
-
 .unjoin2_button:active {
     position: relative;
     top: 3px;
 }
 
+.unjoin3_button {
+    position: relative;
+    top: 8px;
+    color: #6B0F1A;
+}
+
+.unjoin3_button:active {
+    position: relative;
+    top: 10px;
+}
+
 .join_button {
     position: relative;
-    top: 15px;
+    top: 12px;
     color: green;
 }
 
@@ -145,12 +151,12 @@ input[type="file"]::file-selector-button:hover {
 
 .join_button:active {
     position: relative;
-    top: 17px;
+    top: 14px;
 }
 
 .edit_button {
     position: relative;
-    top: 15px;
+    top: 12px;
     color: blue;
 }
 
@@ -161,5 +167,5 @@ input[type="file"]::file-selector-button:hover {
 
 .edit_button:active {
     position: relative;
-    top: 17px;
+    top: 14px;
 }

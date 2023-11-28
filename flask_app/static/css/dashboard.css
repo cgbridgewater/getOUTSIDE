@@ -73,7 +73,8 @@
     width: 85%;
     max-width: 850px;
     margin: 0 auto;
-    margin-top: 3%;    
+    margin-top: 3%;
+    padding: 10px 0;
 }
 
 .activity_table {
