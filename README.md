@@ -1,6 +1,6 @@
 ## GetOUTSIDE 🌳🚶🌲
 
-**ReadME updates coming soon to reflect site updates**
+$${\color{red}**ReadME \space updates \space coming \space soon \space to \space reflect \space site \space updates**}$$
 
 See the LIVE site here 👉 <a href="http://54.201.23.108/getoutside">GetOUTSIDE</a>
 <p>Don't want to make an account? Explore the site with the demo account!</p> 
